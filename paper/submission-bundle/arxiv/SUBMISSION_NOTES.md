@@ -1,5 +1,7 @@
 # arXiv submission bundle — skinheat Letter
 
+**Status: arXiv posting is deferred until after publication (account submission limit). Keep this bundle in sync with the accepted version; update the Comments line with the journal reference before posting.**
+
 ## Files
 | File | Purpose |
 |---|---|
@@ -18,7 +20,7 @@ Compile recipe: `pdflatex main_arxiv` twice (no bibtex needed).
 
 **Abstract**: see `abstract.txt`
 
-**Comments**: 6 pages, 4 figures + Supplemental Material (7 pages, 4 tables). Code and data: doi:10.5281/zenodo.23801926. Submitted to Physical Review Letters.
+**Comments**: 6 pages, 4 figures + Supplemental Material (7 pages, 4 tables). Code and data: doi:10.5281/zenodo.23801926. Published in Physical Review Letters [volume, article number, year to be inserted].
 
 **Primary category**: quant-ph
 

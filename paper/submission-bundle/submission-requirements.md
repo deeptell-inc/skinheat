@@ -17,7 +17,7 @@
 | 13 | Zenodo 寄託物 | ✓（未寄託） | `zenodo/`（README, CITATION.cff, submission.json, tarball）。寄託・公開は著者承認後 |
 
 ## 投稿前に著者が埋める項目
-- [ ] arXiv 番号（`cover_letter.tex`, `arxiv/SUBMISSION_NOTES.md`）
+- [ ] arXiv: 投稿制限のため**出版後**に投稿（カバーレターは「出版後に arXiv へ」と記載済み。受理後に `arxiv/SUBMISSION_NOTES.md` の Comments に掲載情報を入れて投稿）
 - [x] Zenodo: 本番 draft 作成済み（deposition 23801927、concept DOI 10.5281/zenodo.23801926）。DOI は転記済み。**公開（publish）は未実行**: https://zenodo.org/deposit/23801927 で内容確認後に Publish
 - [ ] Author contributions の最終文言（`DECLARATIONS.md`）
 - [ ] 推奨査読者の所属メール（投稿フォームで要求される場合）

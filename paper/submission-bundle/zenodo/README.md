@@ -1,6 +1,6 @@
 # skinheat v0.1.0 — code and data for "Exact exponential heat rectification from the Liouvillian skin effect"
 
-H. Wakaura and T. Tanimae (QIRI, Tokyo). Companion deposit for the Letter submitted to Physical Review Letters.
+H. Wakaura and T. Tanimae (QIRI, Tokyo). Companion deposit for the Letter submitted to Physical Review Letters. Concept DOI 10.5281/zenodo.23801926; this version 10.5281/zenodo.23801927.
 
 ## Contents of `skinheat-v0.1.0.tar.gz`
 | Path | What it is |

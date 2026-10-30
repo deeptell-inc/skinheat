@@ -18,7 +18,7 @@ Compile recipe: `pdflatex main_arxiv` twice (no bibtex needed).
 
 **Abstract**: see `abstract.txt`
 
-**Comments**: 6 pages, 4 figures + Supplemental Material (7 pages, 4 tables). Code and data: Zenodo DOI [insert]. Submitted to Physical Review Letters.
+**Comments**: 6 pages, 4 figures + Supplemental Material (7 pages, 4 tables). Code and data: doi:10.5281/zenodo.23801926. Submitted to Physical Review Letters.
 
 **Primary category**: quant-ph
 

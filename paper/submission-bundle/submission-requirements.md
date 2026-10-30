@@ -18,6 +18,6 @@
 
 ## 投稿前に著者が埋める項目
 - [ ] arXiv 番号（`cover_letter.tex`, `arxiv/SUBMISSION_NOTES.md`）
-- [ ] Zenodo DOI（`main.tex` Data availability, `cover_letter.tex`, `DECLARATIONS.md`）: `zenodo/make_deposit.sh` → `zenodo-deposit --production` → 公開後に DOI を転記
+- [x] Zenodo: 本番 draft 作成済み（deposition 23801927、concept DOI 10.5281/zenodo.23801926）。DOI は転記済み。**公開（publish）は未実行**: https://zenodo.org/deposit/23801927 で内容確認後に Publish
 - [ ] Author contributions の最終文言（`DECLARATIONS.md`）
 - [ ] 推奨査読者の所属メール（投稿フォームで要求される場合）

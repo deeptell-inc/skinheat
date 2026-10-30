@@ -3,13 +3,35 @@
   "title": "skinheat: code and data for 'Exact exponential heat rectification from the Liouvillian skin effect'",
   "version": "0.1.0",
   "creators": [
-    {"name": "Wakaura, Hikaru", "affiliation": "QIRI (Quantum Integrated Research Institute Inc.), Tokyo, Japan"},
-    {"name": "Tanimae, Taiki", "affiliation": "QIRI (Quantum Integrated Research Institute Inc.), Tokyo, Japan"}
+    {
+      "name": "Wakaura, Hikaru",
+      "affiliation": "QIRI (Quantum Integrated Research Institute Inc.), Tokyo, Japan"
+    },
+    {
+      "name": "Tanimae, Taiki",
+      "affiliation": "QIRI (Quantum Integrated Research Institute Inc.), Tokyo, Japan"
+    }
   ],
   "description": "Python package (Gaussian quadratic-Lindbladian solver, non-Hermitian Landauer transmissions, superfermion matrix-product-state Lindblad solver), reproduction scripts, test suite, all result files and the figure generator for the Letter 'Exact exponential heat rectification from the Liouvillian skin effect' (H. Wakaura and T. Tanimae). Every figure of the Letter and its Supplemental Material regenerates from the included JSON data with paper/make_figures.py.",
-  "keywords": ["non-Hermitian skin effect", "Liouvillian skin effect", "heat rectification", "thermal diode", "open quantum systems", "matrix product states"],
+  "keywords": [
+    "non-Hermitian skin effect",
+    "Liouvillian skin effect",
+    "heat rectification",
+    "thermal diode",
+    "open quantum systems",
+    "matrix product states"
+  ],
   "license": "MIT",
   "access_right": "open",
   "language": "eng",
-  "files": ["skinheat-v0.1.0.tar.gz"]
+  "files": [
+    "skinheat-v0.1.0.tar.gz"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/deeptell-inc/skinheat",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
 }

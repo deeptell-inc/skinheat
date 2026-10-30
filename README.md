@@ -1,5 +1,7 @@
 # skinheat
 
+Repository: https://github.com/deeptell-inc/skinheat (private until the Letter is posted).
+
 Code and data for **"Exact exponential heat rectification from the Liouvillian skin effect"** (H. Wakaura and T. Tanimae, submitted to Physical Review Letters).
 
 A reciprocal tight-binding chain with directional bond loss `L_j = √κ (c_j + e^{iφ} c_{j+1})` between two thermal leads rectifies heat with the exact ratio

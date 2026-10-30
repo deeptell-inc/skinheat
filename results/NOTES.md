@@ -333,3 +333,4 @@ G_LL = (P G P)_11 = (G^T)_11 = G_11 → 端の反射率が厳密に等しい。�
 - `skinheat/` を git リポジトリ化（初回コミット 334 ファイル、`.git` 約 8 MB）。追加: `README.md`（パッケージ・図⇔スクリプト⇔結果の対応表・テスト一覧）、`Makefile`（install/test/figures/paper/bundle/zenodo/clean）、`.gitignore`（LaTeX 生成物、egg-info、run ログ、`.pkl`、tarball）、`pyproject.toml` の完全なメタデータ（著者・ライセンス・optional-deps `[mps]`/`[dev]`・pytest markers）。
 - `results/beyond_nn_runs/launch*.sh` の絶対パス（`cd /Users/...`, `PY=../../myvenv/...`）を相対パス＋`${PY:-python}` に変更。
 - 高速テスト 9 本合格（4 分）。リモートは未設定（push していない）。
+- 2026-10-30: `*.tex` を .gitignore に追加して追跡から外し（原稿ソースは非公開、PDF・図・bib は残す）、https://github.com/deeptell-inc/skinheat（private）に push。Zenodo の related_identifiers に GitHub URL を追加。

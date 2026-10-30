@@ -1,0 +1,521 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (72) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (-1) disabled
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{43}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Terraneo}\ \emph {et~al.}(2002)\citenamefont
+  {Terraneo}, \citenamefont {Peyrard},\ and\ \citenamefont
+  {Casati}}]{Terraneo2002}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Terraneo}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Peyrard}},\
+  and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Casati}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.88.094302} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {88}},\
+  \bibinfo {pages} {094302} (\bibinfo {year} {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Li}\ \emph {et~al.}(2004)\citenamefont {Li},
+  \citenamefont {Wang},\ and\ \citenamefont {Casati}}]{Li2004}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Li}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Wang}},\ and\
+  \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Casati}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.93.184301} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {93}},\
+  \bibinfo {pages} {184301} (\bibinfo {year} {2004})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Chang}\ \emph {et~al.}(2006)\citenamefont {Chang},
+  \citenamefont {Okawa}, \citenamefont {Majumdar},\ and\ \citenamefont
+  {Zettl}}]{Chang2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~W.}\ \bibnamefont
+  {Chang}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Okawa}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Majumdar}},\ and\
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Zettl}},\ }\href
+  {https://doi.org/10.1126/science.1132898} {\bibfield  {journal} {\bibinfo
+  {journal} {Science}\ }\textbf {\bibinfo {volume} {314}},\ \bibinfo {pages}
+  {1121} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Li}\ \emph {et~al.}(2012)\citenamefont {Li},
+  \citenamefont {Ren}, \citenamefont {Wang}, \citenamefont {Zhang},
+  \citenamefont {H{\"a}nggi},\ and\ \citenamefont {Li}}]{Li2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Li}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Ren}}, \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Wang}}, \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Zhang}}, \bibinfo {author} {\bibfnamefont
+  {P.}~\bibnamefont {H{\"a}nggi}},\ and\ \bibinfo {author} {\bibfnamefont
+  {B.}~\bibnamefont {Li}},\ }\href {https://doi.org/10.1103/RevModPhys.84.1045}
+  {\bibfield  {journal} {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf
+  {\bibinfo {volume} {84}},\ \bibinfo {pages} {1045} (\bibinfo {year}
+  {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Benenti}\ \emph {et~al.}(2017)\citenamefont
+  {Benenti}, \citenamefont {Casati}, \citenamefont {Saito},\ and\ \citenamefont
+  {Whitney}}]{Benenti2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Benenti}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Casati}},
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Saito}},\ and\ \bibinfo
+  {author} {\bibfnamefont {R.~S.}\ \bibnamefont {Whitney}},\ }\href
+  {https://doi.org/10.1016/j.physrep.2017.05.008} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rep.}\ }\textbf {\bibinfo {volume} {694}},\
+  \bibinfo {pages} {1} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Segal}\ and\ \citenamefont
+  {Nitzan}(2005)}]{Segal2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Segal}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Nitzan}},\
+  }\href {https://doi.org/10.1103/PhysRevLett.94.034301} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {94}},\
+  \bibinfo {pages} {034301} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhang}\ \emph {et~al.}(2025)\citenamefont {Zhang},
+  \citenamefont {Zhang}, \citenamefont {Yang}, \citenamefont {Liu},\ and\
+  \citenamefont {Yu}}]{Zhang2025}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Q.}~\bibnamefont
+  {Zhang}}, \bibinfo {author} {\bibfnamefont {Z.-c.}\ \bibnamefont {Zhang}},
+  \bibinfo {author} {\bibfnamefont {Y.-j.}\ \bibnamefont {Yang}}, \bibinfo
+  {author} {\bibfnamefont {Z.}~\bibnamefont {Liu}},\ and\ \bibinfo {author}
+  {\bibfnamefont {C.-s.}\ \bibnamefont {Yu}},\ }\href
+  {https://doi.org/10.1103/m23x-8r74} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. E}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo
+  {pages} {044155} (\bibinfo {year} {2025})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hatano}\ and\ \citenamefont
+  {Nelson}(1996)}]{Hatano1996}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Hatano}}\ and\ \bibinfo {author} {\bibfnamefont {D.~R.}\ \bibnamefont
+  {Nelson}},\ }\href {https://doi.org/10.1103/PhysRevLett.77.570} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {77}},\ \bibinfo {pages} {570} (\bibinfo {year} {1996})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Yao}\ and\ \citenamefont {Wang}(2018)}]{Yao2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Yao}}\ and\ \bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont {Wang}},\
+  }\href {https://doi.org/10.1103/PhysRevLett.121.086803} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {121}},\
+  \bibinfo {pages} {086803} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gong}\ \emph {et~al.}(2018)\citenamefont {Gong},
+  \citenamefont {Ashida}, \citenamefont {Kawabata}, \citenamefont {Takasan},
+  \citenamefont {Higashikawa},\ and\ \citenamefont {Ueda}}]{Gong2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont
+  {Gong}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Ashida}},
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Kawabata}}, \bibinfo
+  {author} {\bibfnamefont {K.}~\bibnamefont {Takasan}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Higashikawa}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Ueda}},\ }\href
+  {https://doi.org/10.1103/PhysRevX.8.031079} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. X}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo {pages}
+  {031079} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lee}\ and\ \citenamefont {Thomale}(2019)}]{Lee2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~H.}\ \bibnamefont
+  {Lee}}\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Thomale}},\
+  }\href {https://doi.org/10.1103/PhysRevB.99.201103} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {99}},\
+  \bibinfo {pages} {201103} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Okuma}\ \emph {et~al.}(2020)\citenamefont {Okuma},
+  \citenamefont {Kawabata}, \citenamefont {Shiozaki},\ and\ \citenamefont
+  {Sato}}]{Okuma2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Okuma}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Kawabata}},
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Shiozaki}},\ and\
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Sato}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.124.086801} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {124}},\
+  \bibinfo {pages} {086801} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bergholtz}\ \emph {et~al.}(2021)\citenamefont
+  {Bergholtz}, \citenamefont {Budich},\ and\ \citenamefont
+  {Kunst}}]{Bergholtz2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~J.}\ \bibnamefont
+  {Bergholtz}}, \bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont
+  {Budich}},\ and\ \bibinfo {author} {\bibfnamefont {F.~K.}\ \bibnamefont
+  {Kunst}},\ }\href {https://doi.org/10.1103/RevModPhys.93.015005} {\bibfield
+  {journal} {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume}
+  {93}},\ \bibinfo {pages} {015005} (\bibinfo {year} {2021})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Song}\ \emph {et~al.}(2019)\citenamefont {Song},
+  \citenamefont {Yao},\ and\ \citenamefont {Wang}}]{Song2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Song}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Yao}},\ and\
+  \bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont {Wang}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.123.170401} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {123}},\
+  \bibinfo {pages} {170401} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Haga}\ \emph {et~al.}(2021)\citenamefont {Haga},
+  \citenamefont {Nakagawa}, \citenamefont {Hamazaki},\ and\ \citenamefont
+  {Ueda}}]{Haga2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Haga}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Nakagawa}},
+  \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Hamazaki}},\ and\
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Ueda}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.127.070402} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {127}},\
+  \bibinfo {pages} {070402} (\bibinfo {year} {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Metelmann}\ and\ \citenamefont
+  {Clerk}(2015)}]{Metelmann2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Metelmann}}\ and\ \bibinfo {author} {\bibfnamefont {A.~A.}\ \bibnamefont
+  {Clerk}},\ }\href {https://doi.org/10.1103/PhysRevX.5.021025} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. X}\ }\textbf {\bibinfo {volume}
+  {5}},\ \bibinfo {pages} {021025} (\bibinfo {year} {2015})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Rassaert}\ \emph {et~al.}(2025)\citenamefont
+  {Rassaert}, \citenamefont {Ramos}, \citenamefont {Roscilde},\ and\
+  \citenamefont {Porras}}]{Rassaert2025}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Rassaert}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Ramos}},
+  \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Roscilde}},\ and\
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Porras}},\ }\href
+  {https://doi.org/10.1103/w32k-x3l5} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {135}},\ \bibinfo
+  {pages} {203603} (\bibinfo {year} {2025})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Shigedomi}\ and\ \citenamefont
+  {Yoshida}(2026)}]{Shigedomi2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Shigedomi}}\ and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Yoshida}},\ }\href {https://doi.org/10.1103/vlxs-3mgs} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {113}},\
+  \bibinfo {pages} {035121} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wang}\ \emph {et~al.}(2026)\citenamefont {Wang},
+  \citenamefont {Xiao}, \citenamefont {Longhi},\ and\ \citenamefont
+  {Xue}}]{Wang2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Wang}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Xiao}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Longhi}},\ and\ \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Xue}},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {arXiv:2604.12739}\ } (\bibinfo {year}
+  {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Weidemann}\ \emph {et~al.}(2020)\citenamefont
+  {Weidemann}, \citenamefont {Kremer}, \citenamefont {Helbig}, \citenamefont
+  {Hofmann}, \citenamefont {Stegmaier}, \citenamefont {Greiter}, \citenamefont
+  {Thomale},\ and\ \citenamefont {Szameit}}]{Weidemann2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Weidemann}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Kremer}},
+  \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Helbig}}, \bibinfo
+  {author} {\bibfnamefont {T.}~\bibnamefont {Hofmann}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Stegmaier}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Greiter}}, \bibinfo {author} {\bibfnamefont
+  {R.}~\bibnamefont {Thomale}},\ and\ \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Szameit}},\ }\href
+  {https://doi.org/10.1126/science.aaz8727} {\bibfield  {journal} {\bibinfo
+  {journal} {Science}\ }\textbf {\bibinfo {volume} {368}},\ \bibinfo {pages}
+  {311} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Helbig}\ \emph {et~al.}(2020)\citenamefont {Helbig},
+  \citenamefont {Hofmann}, \citenamefont {Imhof}, \citenamefont {Abdelghany},
+  \citenamefont {Kiessling}, \citenamefont {Molenkamp}, \citenamefont {Lee},
+  \citenamefont {Szameit}, \citenamefont {Greiter},\ and\ \citenamefont
+  {Thomale}}]{Helbig2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Helbig}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Hofmann}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Imhof}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Abdelghany}}, \bibinfo {author}
+  {\bibfnamefont {T.}~\bibnamefont {Kiessling}}, \bibinfo {author}
+  {\bibfnamefont {L.~W.}\ \bibnamefont {Molenkamp}}, \bibinfo {author}
+  {\bibfnamefont {C.~H.}\ \bibnamefont {Lee}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Szameit}}, \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {Greiter}},\ and\ \bibinfo {author} {\bibfnamefont
+  {R.}~\bibnamefont {Thomale}},\ }\href
+  {https://doi.org/10.1038/s41567-020-0922-9} {\bibfield  {journal} {\bibinfo
+  {journal} {Nat. Phys.}\ }\textbf {\bibinfo {volume} {16}},\ \bibinfo {pages}
+  {747} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Xiao}\ \emph {et~al.}(2020)\citenamefont {Xiao},
+  \citenamefont {Deng}, \citenamefont {Wang}, \citenamefont {Zhu},
+  \citenamefont {Wang}, \citenamefont {Yi},\ and\ \citenamefont
+  {Xue}}]{Xiao2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Xiao}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Deng}}, \bibinfo
+  {author} {\bibfnamefont {K.}~\bibnamefont {Wang}}, \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Zhu}}, \bibinfo {author} {\bibfnamefont
+  {Z.}~\bibnamefont {Wang}}, \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Yi}},\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Xue}},\
+  }\href {https://doi.org/10.1038/s41567-020-0836-6} {\bibfield  {journal}
+  {\bibinfo  {journal} {Nat. Phys.}\ }\textbf {\bibinfo {volume} {16}},\
+  \bibinfo {pages} {761} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Liang}\ \emph {et~al.}(2022)\citenamefont {Liang},
+  \citenamefont {Xie}, \citenamefont {Dong}, \citenamefont {Li}, \citenamefont
+  {Li}, \citenamefont {Gadway}, \citenamefont {Yi},\ and\ \citenamefont
+  {Yan}}]{Liang2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Q.}~\bibnamefont
+  {Liang}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Xie}}, \bibinfo
+  {author} {\bibfnamefont {Z.}~\bibnamefont {Dong}}, \bibinfo {author}
+  {\bibfnamefont {H.}~\bibnamefont {Li}}, \bibinfo {author} {\bibfnamefont
+  {H.}~\bibnamefont {Li}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Gadway}}, \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {Yi}},\ and\
+  \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Yan}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.129.070401} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {129}},\
+  \bibinfo {pages} {070401} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhou}\ \emph {et~al.}(2025)\citenamefont {Zhou},
+  \citenamefont {Nie}, \citenamefont {Hu}, \citenamefont {Wang}, \citenamefont
+  {Wu}, \citenamefont {He},\ and\ \citenamefont {Deng}}]{Zhou2025}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Zhou}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Nie}}, \bibinfo
+  {author} {\bibfnamefont {R.}~\bibnamefont {Hu}}, \bibinfo {author}
+  {\bibfnamefont {X.}~\bibnamefont {Wang}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Wu}}, \bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont
+  {He}},\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Deng}},\
+  }\href {https://doi.org/10.1103/PhysRevB.111.224104} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {111}},\
+  \bibinfo {pages} {224104} (\bibinfo {year} {2025})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cao}\ \emph {et~al.}(2021)\citenamefont {Cao},
+  \citenamefont {Li}, \citenamefont {Peng}, \citenamefont {Qi}, \citenamefont
+  {Huang}, \citenamefont {Li},\ and\ \citenamefont {Zhu}}]{Cao2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-C.}\ \bibnamefont
+  {Cao}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Li}}, \bibinfo
+  {author} {\bibfnamefont {Y.-G.}\ \bibnamefont {Peng}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Qi}}, \bibinfo {author} {\bibfnamefont
+  {W.-X.}\ \bibnamefont {Huang}}, \bibinfo {author} {\bibfnamefont {P.-Q.}\
+  \bibnamefont {Li}},\ and\ \bibinfo {author} {\bibfnamefont {X.-F.}\
+  \bibnamefont {Zhu}},\ }\href {https://doi.org/10.1038/s42005-021-00731-z}
+  {\bibfield  {journal} {\bibinfo  {journal} {Commun. Phys.}\ }\textbf
+  {\bibinfo {volume} {4}},\ \bibinfo {pages} {230} (\bibinfo {year}
+  {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Liu}\ \emph {et~al.}(2024)\citenamefont {Liu},
+  \citenamefont {Cao}, \citenamefont {Qi}, \citenamefont {Huang}, \citenamefont
+  {Gao}, \citenamefont {Peng}, \citenamefont {Li},\ and\ \citenamefont
+  {Zhu}}]{Liu2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.-K.}\ \bibnamefont
+  {Liu}}, \bibinfo {author} {\bibfnamefont {P.-C.}\ \bibnamefont {Cao}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Qi}}, \bibinfo {author}
+  {\bibfnamefont {Q.-K.-L.}\ \bibnamefont {Huang}}, \bibinfo {author}
+  {\bibfnamefont {F.}~\bibnamefont {Gao}}, \bibinfo {author} {\bibfnamefont
+  {Y.-G.}\ \bibnamefont {Peng}}, \bibinfo {author} {\bibfnamefont
+  {Y.}~\bibnamefont {Li}},\ and\ \bibinfo {author} {\bibfnamefont {X.-F.}\
+  \bibnamefont {Zhu}},\ }\href {https://doi.org/10.1016/j.scib.2024.02.040}
+  {\bibfield  {journal} {\bibinfo  {journal} {Sci. Bull.}\ }\textbf {\bibinfo
+  {volume} {69}},\ \bibinfo {pages} {1228} (\bibinfo {year}
+  {2024})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {McDonald}\ and\ \citenamefont
+  {Clerk}(2020)}]{McDonald2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {McDonald}}\ and\ \bibinfo {author} {\bibfnamefont {A.~A.}\ \bibnamefont
+  {Clerk}},\ }\href {https://doi.org/10.1038/s41467-020-19090-4} {\bibfield
+  {journal} {\bibinfo  {journal} {Nat. Commun.}\ }\textbf {\bibinfo {volume}
+  {11}},\ \bibinfo {pages} {5382} (\bibinfo {year} {2020})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Busnaina}\ \emph {et~al.}(2024)\citenamefont
+  {Busnaina}, \citenamefont {Shi}, \citenamefont {McDonald}, \citenamefont
+  {Dubyna}, \citenamefont {Nsanzineza}, \citenamefont {Hung}, \citenamefont
+  {Chang}, \citenamefont {Clerk},\ and\ \citenamefont {Wilson}}]{Busnaina2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~H.}\ \bibnamefont
+  {Busnaina}}, \bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont {Shi}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {McDonald}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Dubyna}}, \bibinfo {author}
+  {\bibfnamefont {I.}~\bibnamefont {Nsanzineza}}, \bibinfo {author}
+  {\bibfnamefont {J.~S.~C.}\ \bibnamefont {Hung}}, \bibinfo {author}
+  {\bibfnamefont {C.~W.~S.}\ \bibnamefont {Chang}}, \bibinfo {author}
+  {\bibfnamefont {A.~A.}\ \bibnamefont {Clerk}},\ and\ \bibinfo {author}
+  {\bibfnamefont {C.~M.}\ \bibnamefont {Wilson}},\ }\href
+  {https://doi.org/10.1038/s41467-024-47186-8} {\bibfield  {journal} {\bibinfo
+  {journal} {Nat. Commun.}\ }\textbf {\bibinfo {volume} {15}},\ \bibinfo
+  {pages} {3065} (\bibinfo {year} {2024})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Slim}\ \emph {et~al.}(2024)\citenamefont {Slim},
+  \citenamefont {Wanjura}, \citenamefont {Brunelli}, \citenamefont {del Pino},
+  \citenamefont {Nunnenkamp},\ and\ \citenamefont {Verhagen}}]{Slim2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~J.}\ \bibnamefont
+  {Slim}}, \bibinfo {author} {\bibfnamefont {C.~C.}\ \bibnamefont {Wanjura}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Brunelli}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {del Pino}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Nunnenkamp}},\ and\ \bibinfo {author}
+  {\bibfnamefont {E.}~\bibnamefont {Verhagen}},\ }\href
+  {https://doi.org/10.1038/s41586-024-07174-w} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {627}},\ \bibinfo {pages}
+  {767} (\bibinfo {year} {2024})}\BibitemShut {NoStop}%
+\bibitem [{SM()}]{SM}%
+  \BibitemOpen
+  \href@noop {} {}\bibinfo {note} {See Supplemental Material at [URL] for the
+  Gaussian solution, the proofs of Eqs.~(3), (5) and of the mirror identity,
+  the non-Bloch derivation, the superfermion MPS method and its precision
+  analysis, the finite-temperature bath construction, additional disorder data
+  and experimental parameters}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Yokomizo}\ and\ \citenamefont
+  {Murakami}(2019)}]{Yokomizo2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Yokomizo}}\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Murakami}},\ }\href {https://doi.org/10.1103/PhysRevLett.123.066404}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
+  {\bibinfo {volume} {123}},\ \bibinfo {pages} {066404} (\bibinfo {year}
+  {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhang}\ \emph {et~al.}(2020)\citenamefont {Zhang},
+  \citenamefont {Yang},\ and\ \citenamefont {Fang}}]{Zhang2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Zhang}}, \bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont {Yang}},\ and\
+  \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Fang}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.125.126402} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {125}},\
+  \bibinfo {pages} {126402} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Brighi}\ and\ \citenamefont
+  {Nunnenkamp}(2024)}]{Brighi2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Brighi}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Nunnenkamp}},\ }\href {https://doi.org/10.1103/PhysRevA.110.L020201}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo
+  {volume} {110}},\ \bibinfo {pages} {L020201} (\bibinfo {year}
+  {2024})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Koh}\ \emph {et~al.}(2026)\citenamefont {Koh},
+  \citenamefont {Xue}, \citenamefont {Tai}, \citenamefont {Koh},\ and\
+  \citenamefont {Lee}}]{Koh2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont
+  {Koh}}, \bibinfo {author} {\bibfnamefont {W.-T.}\ \bibnamefont {Xue}},
+  \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Tai}}, \bibinfo {author}
+  {\bibfnamefont {D.~E.}\ \bibnamefont {Koh}},\ and\ \bibinfo {author}
+  {\bibfnamefont {C.~H.}\ \bibnamefont {Lee}},\ }\href
+  {https://doi.org/10.1038/s41467-026-75904-x} {\bibfield  {journal} {\bibinfo
+  {journal} {Nat. Commun.}\ }\textbf {\bibinfo {volume} {17}},\ \bibinfo
+  {pages} {9120} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Roccati}\ and\ \citenamefont
+  {Balducci}(2026)}]{Roccati2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Roccati}}\ and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Balducci}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {arXiv:2603.13526}\ } (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Prosen}(2008)}]{Prosen2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Prosen}},\ }\href {https://doi.org/10.1088/1367-2630/10/4/043026} {\bibfield
+   {journal} {\bibinfo  {journal} {New J. Phys.}\ }\textbf {\bibinfo {volume}
+  {10}},\ \bibinfo {pages} {043026} (\bibinfo {year} {2008})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Dzhioev}\ and\ \citenamefont
+  {Kosov}(2011)}]{Dzhioev2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~A.}\ \bibnamefont
+  {Dzhioev}}\ and\ \bibinfo {author} {\bibfnamefont {D.~S.}\ \bibnamefont
+  {Kosov}},\ }\href {https://doi.org/10.1063/1.3548065} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {134}},\
+  \bibinfo {pages} {044121} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zaletel}\ \emph {et~al.}(2015)\citenamefont
+  {Zaletel}, \citenamefont {Mong}, \citenamefont {Karrasch}, \citenamefont
+  {Moore},\ and\ \citenamefont {Pollmann}}]{Zaletel2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~P.}\ \bibnamefont
+  {Zaletel}}, \bibinfo {author} {\bibfnamefont {R.~S.~K.}\ \bibnamefont
+  {Mong}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Karrasch}},
+  \bibinfo {author} {\bibfnamefont {J.~E.}\ \bibnamefont {Moore}},\ and\
+  \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Pollmann}},\ }\href
+  {https://doi.org/10.1103/PhysRevB.91.165112} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo
+  {pages} {165112} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hauschild}\ and\ \citenamefont
+  {Pollmann}(2018)}]{Hauschild2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Hauschild}}\ and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Pollmann}},\ }\href {https://doi.org/10.21468/SciPostPhysLectNotes.5}
+  {\bibfield  {journal} {\bibinfo  {journal} {SciPost Phys. Lect. Notes}\ ,\
+  \bibinfo {pages} {5}} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Brantut}\ \emph {et~al.}(2012)\citenamefont
+  {Brantut}, \citenamefont {Meineke}, \citenamefont {Stadler}, \citenamefont
+  {Krinner},\ and\ \citenamefont {Esslinger}}]{Brantut2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-P.}\ \bibnamefont
+  {Brantut}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Meineke}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Stadler}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Krinner}},\ and\ \bibinfo {author}
+  {\bibfnamefont {T.}~\bibnamefont {Esslinger}},\ }\href
+  {https://doi.org/10.1126/science.1223175} {\bibfield  {journal} {\bibinfo
+  {journal} {Science}\ }\textbf {\bibinfo {volume} {337}},\ \bibinfo {pages}
+  {1069} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Krinner}\ \emph {et~al.}(2017)\citenamefont
+  {Krinner}, \citenamefont {Esslinger},\ and\ \citenamefont
+  {Brantut}}]{Krinner2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Krinner}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Esslinger}},\
+  and\ \bibinfo {author} {\bibfnamefont {J.-P.}\ \bibnamefont {Brantut}},\
+  }\href {https://doi.org/10.1088/1361-648X/aa74a1} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Phys.: Condens. Matter}\ }\textbf {\bibinfo {volume}
+  {29}},\ \bibinfo {pages} {343003} (\bibinfo {year} {2017})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Shen}\ \emph {et~al.}(2025)\citenamefont {Shen},
+  \citenamefont {Chen}, \citenamefont {Yang},\ and\ \citenamefont
+  {Lee}}]{Shen2025}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Shen}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Chen}}, \bibinfo
+  {author} {\bibfnamefont {B.}~\bibnamefont {Yang}},\ and\ \bibinfo {author}
+  {\bibfnamefont {C.~H.}\ \bibnamefont {Lee}},\ }\href
+  {https://doi.org/10.1038/s41467-025-55953-4} {\bibfield  {journal} {\bibinfo
+  {journal} {Nat. Commun.}\ }\textbf {\bibinfo {volume} {16}},\ \bibinfo
+  {pages} {1340} (\bibinfo {year} {2025})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Yang}\ \emph {et~al.}(2026)\citenamefont {Yang},
+  \citenamefont {Sun}, \citenamefont {Hong},\ and\ \citenamefont
+  {Yang}}]{Yang2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Yang}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Sun}}, \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Hong}},\ and\ \bibinfo {author}
+  {\bibfnamefont {Y.}~\bibnamefont {Yang}},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {arXiv:2606.27043}\ } (\bibinfo {year}
+  {2026})}\BibitemShut {NoStop}%
+\end{thebibliography}%

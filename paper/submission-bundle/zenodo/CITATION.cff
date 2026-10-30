@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the Letter and this deposit."
+title: "skinheat: code and data for 'Exact exponential heat rectification from the Liouvillian skin effect'"
+version: 0.1.0
+date-released: 2026-10-29
+license: MIT
+authors:
+  - family-names: Wakaura
+    given-names: Hikaru
+    affiliation: "QIRI (Quantum Integrated Research Institute Inc.), Tokyo, Japan"
+  - family-names: Tanimae
+    given-names: Taiki
+    affiliation: "QIRI (Quantum Integrated Research Institute Inc.), Tokyo, Japan"
+keywords:
+  - non-Hermitian skin effect
+  - Liouvillian skin effect
+  - heat rectification
+  - thermal diode
+  - open quantum systems
+  - matrix product states

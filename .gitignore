@@ -1,0 +1,31 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.DS_Store
+# LaTeX build products (PDFs of the manuscript are kept)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/*Notes.bib
+paper/*.compile.log
+paper/*.bak
+paper/submission-bundle/**/*.aux
+paper/submission-bundle/**/*.log
+paper/submission-bundle/**/*.out
+paper/submission-bundle/**/*.blg
+paper/submission-bundle/**/*Notes.bib
+# large intermediate states of the (unused) response method
+results/beyond_nn_runs/resp_*.pkl
+# deposit tarballs are rebuilt by make
+paper/submission-bundle/zenodo/skinheat-v*.tar.gz
+# per-run stdout logs and latexmk/synctex products
+results/beyond_nn_runs/**/*.log
+paper/submission-bundle/**/*.fdb_latexmk
+paper/submission-bundle/**/*.fls
+paper/submission-bundle/**/*.synctex.gz
+paper/submission-bundle/arxiv/skinheat_arxiv.tar.gz

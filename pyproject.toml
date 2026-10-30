@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skinheat"
+version = "0.1.0"
+description = "Heat rectification from the Liouvillian skin effect: exact Gaussian solver, non-Hermitian Landauer transmissions and a superfermion matrix-product-state Lindblad solver"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Hikaru Wakaura", email = "h.wakaura@deeptell.jp"},
+  {name = "Taiki Tanimae", email = "t.tanimae@deeptell.jp"},
+]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7"]
+keywords = ["non-Hermitian skin effect", "Liouvillian skin effect", "heat rectification", "open quantum systems", "matrix product states"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.optional-dependencies]
+mps = ["physics-tenpy>=1.0"]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["skinheat*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: takes more than a minute (MPS vs exact free-fermion comparison)"]

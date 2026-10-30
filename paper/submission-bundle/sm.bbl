@@ -1,0 +1,127 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (72) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (-1) disabled
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{7}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Cao}\ \emph {et~al.}(2021)\citenamefont {Cao},
+  \citenamefont {Li}, \citenamefont {Peng}, \citenamefont {Qi}, \citenamefont
+  {Huang}, \citenamefont {Li},\ and\ \citenamefont {Zhu}}]{Cao2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-C.}\ \bibnamefont
+  {Cao}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Li}}, \bibinfo
+  {author} {\bibfnamefont {Y.-G.}\ \bibnamefont {Peng}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Qi}}, \bibinfo {author} {\bibfnamefont
+  {W.-X.}\ \bibnamefont {Huang}}, \bibinfo {author} {\bibfnamefont {P.-Q.}\
+  \bibnamefont {Li}},\ and\ \bibinfo {author} {\bibfnamefont {X.-F.}\
+  \bibnamefont {Zhu}},\ }\href {https://doi.org/10.1038/s42005-021-00731-z}
+  {\bibfield  {journal} {\bibinfo  {journal} {Commun. Phys.}\ }\textbf
+  {\bibinfo {volume} {4}},\ \bibinfo {pages} {230} (\bibinfo {year}
+  {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Xuereb}\ \emph {et~al.}(2018)\citenamefont {Xuereb},
+  \citenamefont {Aquilina},\ and\ \citenamefont {Barzanjeh}}]{Xuereb2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Xuereb}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Aquilina}},\
+  and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Barzanjeh}},\ }in\
+  \href {https://doi.org/10.1117/12.2309928} {\emph {\bibinfo {booktitle}
+  {Proc. SPIE}}},\ Vol.\ \bibinfo {volume} {10672}\ (\bibinfo {year} {2018})\
+  p.\ \bibinfo {pages} {10672N}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ghaemi-Dizicheh}\ and\ \citenamefont
+  {Schomerus}(2021)}]{Ghaemi2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Ghaemi-Dizicheh}}\ and\ \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Schomerus}},\ }\href {https://doi.org/10.1103/PhysRevA.104.023515}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo
+  {volume} {104}},\ \bibinfo {pages} {023515} (\bibinfo {year}
+  {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Yang}\ \emph {et~al.}(2026)\citenamefont {Yang},
+  \citenamefont {Sun}, \citenamefont {Hong},\ and\ \citenamefont
+  {Yang}}]{Yang2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Yang}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Sun}}, \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Hong}},\ and\ \bibinfo {author}
+  {\bibfnamefont {Y.}~\bibnamefont {Yang}},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {arXiv:2606.27043}\ } (\bibinfo {year}
+  {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Landi}\ \emph {et~al.}(2022)\citenamefont {Landi},
+  \citenamefont {Poletti},\ and\ \citenamefont {Schaller}}]{Landi2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.~T.}\ \bibnamefont
+  {Landi}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Poletti}},\
+  and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Schaller}},\ }\href
+  {https://doi.org/10.1103/RevModPhys.94.045006} {\bibfield  {journal}
+  {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume} {94}},\
+  \bibinfo {pages} {045006} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Brantut}\ \emph {et~al.}(2012)\citenamefont
+  {Brantut}, \citenamefont {Meineke}, \citenamefont {Stadler}, \citenamefont
+  {Krinner},\ and\ \citenamefont {Esslinger}}]{Brantut2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-P.}\ \bibnamefont
+  {Brantut}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Meineke}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Stadler}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Krinner}},\ and\ \bibinfo {author}
+  {\bibfnamefont {T.}~\bibnamefont {Esslinger}},\ }\href
+  {https://doi.org/10.1126/science.1223175} {\bibfield  {journal} {\bibinfo
+  {journal} {Science}\ }\textbf {\bibinfo {volume} {337}},\ \bibinfo {pages}
+  {1069} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Krinner}\ \emph {et~al.}(2017)\citenamefont
+  {Krinner}, \citenamefont {Esslinger},\ and\ \citenamefont
+  {Brantut}}]{Krinner2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Krinner}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Esslinger}},\
+  and\ \bibinfo {author} {\bibfnamefont {J.-P.}\ \bibnamefont {Brantut}},\
+  }\href {https://doi.org/10.1088/1361-648X/aa74a1} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Phys.: Condens. Matter}\ }\textbf {\bibinfo {volume}
+  {29}},\ \bibinfo {pages} {343003} (\bibinfo {year} {2017})}\BibitemShut
+  {NoStop}%
+\end{thebibliography}%

@@ -1,6 +1,6 @@
 # skinheat
 
-Repository: https://github.com/deeptell-inc/skinheat (private until the Letter is posted).
+Repository: https://github.com/deeptell-inc/skinheat
 
 Code and data for **"Exact exponential heat rectification from the Liouvillian skin effect"** (H. Wakaura and T. Tanimae, submitted to Physical Review Letters).
 

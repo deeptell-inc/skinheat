@@ -8,7 +8,7 @@
 | 4 | 図（本文が参照する全図） | ✓ | `figures/fig1–4.pdf`（ベクトル、`make_figures.py` で JSON から再生成） |
 | 5 | 参照文献 | ✓ | `refs.bib` 47 件、引用 42 件、2024 年以降 31%、未定義引用 0 |
 | 6 | Supplemental Material | ✓ | `sm.tex` / `sm.pdf`（S1–S7、表 4） |
-| 7 | カバーレター（推奨査読者、投稿歴） | ✓ | `cover_letter.tex/pdf`（査読者 5 名、本稿・関連原稿の未投稿を明記） |
+| 7 | カバーレター（推奨査読者、投稿歴）＋ Criteria 文（≤100 語） | ✓ | `cover_letter.tex/pdf`（査読者 5 名、未投稿を明記）、`prl-criteria-statement.md`（フォーム用） |
 | 8 | Data Availability 節 | ✓ | `main.tex` §Data availability（APS 指針の型、Zenodo/GitHub を文献として引用）＋ `data-availability-statement.md`（投稿フォーム用） |
 | 9 | Competing interests / funding / contributions | ✓ | `DECLARATIONS.md` |
 | 10 | 投稿衛生（改訂経緯の痕跡なし） | ✓ | `grep -inE "corrected|earlier (revision|draft)|previously reported|referee|phase-1" main.tex` ヒット 0 |

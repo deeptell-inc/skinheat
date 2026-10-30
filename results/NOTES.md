@@ -337,3 +337,4 @@ G_LL = (P G P)_11 = (G^T)_11 = G_11 → 端の反射率が厳密に等しい。�
 - 2026-10-30: Zenodo 本番 draft を作成（deposition 23801927、https://zenodo.org/deposit/23801927、skinheat-v0.1.0.tar.gz 4.6 MB）。**未公開**。concept DOI 10.5281/zenodo.23801926、version DOI 10.5281/zenodo.23801927 を main.tex / cover letter / DECLARATIONS / arXiv notes に転記（Zenodo の id 規約から導いた値。公開後に draft ページの表示と一致するか要確認）。
 - 2026-10-30: deeptell-inc/skinheat を public に変更（ユーザー実行）。README の private 注記を削除。
 - 2026-10-30: Data Availability を APS 指針の型に書き換え（Zenodo・GitHub を refs.bib の文献として引用、投稿フォーム用の `data-availability-statement.md` を追加）。
+- 2026-10-30: arXiv は投稿制限のため出版後に投稿する方針。カバーレター・SUBMISSION_NOTES・requirements・MANIFEST を更新。投稿フォーム用 Data Availability の文献番号を修正。

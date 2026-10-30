@@ -328,3 +328,8 @@ G_LL = (P G P)_11 = (G^T)_11 = G_11 → 端の反射率が厳密に等しい。�
 - 追加: ルートに `LICENSE`（MIT）。Zenodo tarball から `results/NOTES.md`（内部ノート）と `*.pkl`（不採用の応答法の中間状態）を除外。
 - SM の「corrected by the control variate」を「extracted from the control-variate estimate」に言い換え（衛生 grep の唯一のヒット）。
 - 未記入: arXiv 番号、Zenodo DOI、Author contributions の最終文言。寄託・arXiv 投稿・PRL 投稿は未実行（著者承認後）。
+
+## リポジトリ整備（2026-10-30）
+- `skinheat/` を git リポジトリ化（初回コミット 334 ファイル、`.git` 約 8 MB）。追加: `README.md`（パッケージ・図⇔スクリプト⇔結果の対応表・テスト一覧）、`Makefile`（install/test/figures/paper/bundle/zenodo/clean）、`.gitignore`（LaTeX 生成物、egg-info、run ログ、`.pkl`、tarball）、`pyproject.toml` の完全なメタデータ（著者・ライセンス・optional-deps `[mps]`/`[dev]`・pytest markers）。
+- `results/beyond_nn_runs/launch*.sh` の絶対パス（`cd /Users/...`, `PY=../../myvenv/...`）を相対パス＋`${PY:-python}` に変更。
+- 高速テスト 9 本合格（4 分）。リモートは未設定（push していない）。

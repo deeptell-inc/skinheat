@@ -29,3 +29,5 @@ paper/submission-bundle/**/*.fdb_latexmk
 paper/submission-bundle/**/*.fls
 paper/submission-bundle/**/*.synctex.gz
 paper/submission-bundle/arxiv/skinheat_arxiv.tar.gz
+# manuscript sources are kept out of the public repository
+*.tex

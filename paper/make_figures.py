@@ -64,8 +64,8 @@ def fig1():
         b.plot([law(float(k), r["L"]) for r in rows], [r["lnratio"] for r in rows], mk, mfc="none", label=rf"$\kappa={k}J$, $L=5$–$160$")
     rows = [r for r in d["kappa"] if r["kappa"] <= 0.5]
     b.plot([law(r["kappa"], 40) for r in rows], [r["lnratio"] for r in rows], "x", color="C3", label=r"$L=40$, $\kappa=0.003$–$0.5J$")
-    b.plot([0, 50], [0, 50], "k-", lw=0.6, zorder=0)
-    b.set_xlabel(r"$2(L-1)/\xi$"); b.set_ylabel(r"$\ln(\delta Q_f/\delta Q_r)$"); b.set_xlim(0, 50); b.set_ylim(0, 50)
+    b.plot([0, 100], [0, 100], "k-", lw=0.6, zorder=0)
+    b.set_xlabel(r"$2(L-1)/\xi$"); b.set_ylabel(r"$\ln(\delta Q_f/\delta Q_r)$"); b.set_xlim(0, 100); b.set_ylim(0, 100)
     b.legend(loc="upper left", handlelength=1); label(b, "(b)")
     # (c) rectification vs throughput
     c = ax[2]
@@ -131,7 +131,7 @@ def fig3():
     a.errorbar([12, 16], [ck["12"]["2.0"], ck["16"]["2.0"]], yerr=e1, fmt="s", color="C3")
     a.errorbar([12.4], [gb["gain_bath"]["0.0"]], yerr=eg, fmt="D", mfc="none", color="C2")
     a.errorbar([12.4], [gb["gain_bath"]["2.0"]], yerr=eg, fmt="D", color="C2", label=r"$T_b=\infty$ bath (open: $V=0$)")
-    a.set_xlabel(r"$L$"); a.set_ylabel(r"$\ln(\delta Q_f/\delta Q_r)$"); a.set_xlim(10, 22); a.set_ylim(0.5, 3.7)
+    a.set_xlabel(r"$L$"); a.set_ylabel(r"$\ln(\delta Q_f/\delta Q_r)$"); a.set_xlim(10, 22); a.set_ylim(0.5, 4.3)
     a.text(21.7, law(0.05, 21.7) + 0.08, r"$\kappa=0.05J$", color="C0", ha="right", va="bottom", fontsize=6)
     a.text(17.2, 3.02, r"$\kappa=0.1J$", color="C3", ha="left", va="top", fontsize=6)
     a.legend(loc="upper left", fontsize=5.5, handlelength=1.2, labelspacing=0.3); label(a, "(a)")
@@ -183,7 +183,7 @@ def fig4():
         rows = [r for r in D["onsite"] if r["kappa"] == kd]; W = [r["Wd"] for r in rows]
         c.semilogy(W, [r["Qf_median"] for r in rows], "o-", color=col, ms=3, label=rf"$\kappa={kd}J$")
         c.fill_between(W, [r["Qf_p10"] for r in rows], [r["Qf_p90"] for r in rows], color=col, alpha=0.2, lw=0)
-    c.set_xlabel(r"$W_d/J$"); c.set_ylabel(r"$\delta Q_f\ (J^2/\hbar)$, median"); c.legend(loc="lower left", fontsize=5.5); c.set_ylim(1e-7, 6e-2)
+    c.set_xlabel(r"$W_d/J$"); c.set_ylabel(r"$\delta Q_f\ (J^2/\hbar)$, median"); c.legend(loc="lower left", fontsize=5.5); c.set_ylim(1e-9, 6e-2)
     c2 = c.twinx()
     for kd, col in [(0.05, "C0"), (0.1, "C3"), (0.2, "k")]:
         rows = [r for r in D["onsite"] if r["kappa"] == kd]; c2.plot([r["Wd"] for r in rows], [r["R_mean"] for r in rows], "--", color=col, lw=0.8)

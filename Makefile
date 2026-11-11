@@ -1,7 +1,7 @@
 PY ?= python
 TEX = pdflatex -interaction=nonstopmode
 
-.PHONY: install test test-all figures paper bundle zenodo clean
+.PHONY: install test test-all figures paper prb bundle zenodo clean
 
 install:            ## editable install with test deps (add [mps] for TeNPy)
 	$(PY) -m pip install -e ".[dev]"
@@ -19,6 +19,11 @@ paper: figures      ## Letter + Supplemental Material
 	cd paper && $(TEX) main >/dev/null && bibtex main >/dev/null && $(TEX) main >/dev/null && $(TEX) main >/dev/null
 	cd paper && $(TEX) sm >/dev/null && bibtex sm >/dev/null && $(TEX) sm >/dev/null && $(TEX) sm >/dev/null
 	@grep -c '^!' paper/main.log paper/sm.log || true
+
+prb: figures        ## PRB regular article (paper/prb)
+	cp paper/figures/fig[1-4].pdf paper/prb/figures/ && cp paper/refs.bib paper/prb/refs.bib
+	cd paper/prb && $(TEX) main >/dev/null && bibtex main >/dev/null && $(TEX) main >/dev/null && $(TEX) main >/dev/null
+	@grep -c '^!' paper/prb/main.log || true
 
 bundle:             ## arXiv tarball (single-file Letter + SM)
 	cd paper/submission-bundle/arxiv && $(TEX) main_arxiv >/dev/null && bibtex main_arxiv >/dev/null && $(TEX) main_arxiv >/dev/null && $(TEX) main_arxiv >/dev/null \

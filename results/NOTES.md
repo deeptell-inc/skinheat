@@ -338,3 +338,14 @@ G_LL = (P G P)_11 = (G^T)_11 = G_11 → 端の反射率が厳密に等しい。�
 - 2026-10-30: deeptell-inc/skinheat を public に変更（ユーザー実行）。README の private 注記を削除。
 - 2026-10-30: Data Availability を APS 指針の型に書き換え（Zenodo・GitHub を refs.bib の文献として引用、投稿フォーム用の `data-availability-statement.md` を追加）。
 - 2026-10-30: arXiv は投稿制限のため出版後に投稿する方針。カバーレター・SUBMISSION_NOTES・requirements・MANIFEST を更新。投稿フォーム用 Data Availability の文献番号を修正。
+- 2026-11-02: 見切れ修正: 図 1(b) 範囲 0–100（L=120,160 の点を表示）、図 4(c) 下限 1e-9（W_d=4 の曲線・帯を表示）、図 3(a) 上限 4.3 で凡例をデータから離す。全 PDF 再コンパイル、tarball 再生成、push。
+
+## PRL 査読前却下（2026-11-11 記録）
+- 受付番号 **LX20531**。"not suitable for in-depth review"、妥当性の判断なし、選択性の定型文。APS Open Science（Gold OA）への案内あり。
+- 次の APS 誌への投稿ではカバーレターに LX20531 と結果を開示すること（同一原稿なので開示義務あり）。`paper/submission-bundle/cover_letter.tex` の「未投稿」声明は次回投稿前に書き換える。
+
+## PRB 通常論文版（2026-11-11、`paper/prb/`）
+- PRL Letter＋SM を 1 本の通常論文に統合（revtex4-2 `prb`、10 頁、9 節、図 4、表 4、文献 50、アブストラクト 227 語、本文約 4600 語、SM なし）。構成: I 導入 / II 模型・Gauss 解・リード・整流測度 / III 厳密則（三重対角恒等式の証明、帰結、同キラリティ利得）/ IV 非 Bloch 指数 / V 相互作用（手法・精度・結果）/ VI 熱力学コスト（浴、浴状態非依存、σ/δQ、鏡映恒等式）/ VII 乱れ / VIII 実験 / IX 結論。
+- 数値はすべて PRL 版・SM から移したもので、新しい計算はなし。図キャプションの太字は外した。応答法の記述（不採用手法）は載せていない。
+- `paper/prb/cover_letter.tex`: PRL LX20531（査読前却下、妥当性判断なし）を開示。査読者候補 5 名（Wang, Yoshida, Yokomizo, Schomerus, Poletti; 所属は投稿時に要確認）。`paper/prb/SUBMISSION.md` に投稿フォーム用 Data Availability（文献番号 46, 47）とチェックリスト。
+- `make prb` を追加。Zenodo tarball から `*.tex` と `paper/prb` を除外（.tex 非公開の方針に合わせた）。**Zenodo 下書き 23801927 の tarball は 10-30 版のまま（旧図・.tex 入り）**: 公開前に差し替えが必要。

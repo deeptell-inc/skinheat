@@ -31,3 +31,13 @@ paper/submission-bundle/**/*.synctex.gz
 paper/submission-bundle/arxiv/skinheat_arxiv.tar.gz
 # manuscript sources are kept out of the public repository
 *.tex
+
+# build products anywhere under paper/
+paper/**/*.aux
+paper/**/*.log
+paper/**/*.out
+paper/**/*.blg
+paper/**/*Notes.bib
+paper/**/*.fls
+paper/**/*.fdb_latexmk
+paper/**/*.synctex.gz

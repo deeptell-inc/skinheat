@@ -5,7 +5,7 @@ set -e
 HERE=$(cd "$(dirname "$0")" && pwd); ROOT=$(cd "$HERE/../../.." && pwd)
 cd "$ROOT"
 tar czf "$HERE/skinheat-v0.1.0.tar.gz" \
-  --exclude='*.pkl' --exclude='__pycache__' --exclude='*.egg-info' --exclude='*.bak' --exclude='results/NOTES.md' \
+  --exclude='*.pkl' --exclude='__pycache__' --exclude='*.egg-info' --exclude='*.bak' --exclude='results/NOTES.md' --exclude='*.tex' --exclude='paper/prb' \
   --exclude='paper/submission-bundle' --exclude='paper/*.aux' --exclude='paper/*.log' --exclude='paper/*.out' --exclude='paper/*.blg' --exclude='paper/*Notes.bib' --exclude='paper/*.compile.log' \
   LICENSE README.md Makefile pyproject.toml skinheat scripts tests results paper
 ls -la "$HERE/skinheat-v0.1.0.tar.gz"

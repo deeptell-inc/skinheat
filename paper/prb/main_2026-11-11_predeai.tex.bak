@@ -1,0 +1,508 @@
+% ============================================================================
+%  Exact exponential heat rectification from the Liouvillian skin effect
+%  Target: Physical Review B, regular article (revtex4-2, reprint, aps, prb)
+%  Figures are generated from ../../results/*.json by ../make_figures.py.
+% ============================================================================
+\documentclass[reprint,aps,prb,superscriptaddress,nofootinbib,floatfix]{revtex4-2}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{multirow}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xcolor}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\dQ}{\delta Q}
+\newcommand{\heff}{h_{\rm eff}}
+
+\begin{document}
+
+\title{Exact exponential heat rectification from the Liouvillian skin effect}
+
+\author{Hikaru Wakaura}
+\altaffiliation{ORCID: 0000-0001-8381-8323}
+\email{h.wakaura@qiri.co.jp}
+\affiliation{QIRI (Quantum Integrated Research Institute Inc.), Tokyo 107-0061, Japan}
+\author{Taiki Tanimae}
+\email{t.tanimae@qiri.co.jp}
+\affiliation{QIRI (Quantum Integrated Research Institute Inc.), Tokyo 107-0061, Japan}
+
+\date{\today}
+
+\begin{abstract}
+Thermal diodes realised so far rely on nonlinearity or structural asymmetry, and their rectification ratios do not grow with device size.
+Non-Hermitian lattices with a skin effect transport excitations preferentially in one direction, but whether this bias survives in heat transport between thermal reservoirs, what sets its magnitude and what it costs thermodynamically have remained open.
+We study a reciprocal tight-binding chain with directional bond dissipation between two thermal leads and show that the ratio of the forward and reverse heat-current responses obeys the exact law $\dQ_f/\dQ_r=\exp[2(L-1)/\xi]$, where $L$ is the chain length and $\xi$ the Liouvillian skin localisation length.
+The law follows from an identity of tridiagonal Green functions; it holds at every energy and temperature, for fermionic and bosonic carriers, and for arbitrary on-site disorder, while bond disorder obeys an additive sum rule.
+With next-nearest-neighbour hopping the exponent becomes the energy-resolved non-Bloch localisation length, although the spectral winding number vanishes at all transport energies.
+Superfermion matrix-product-state simulations calibrated against the exact solution show that a nearest-neighbour interaction up to twice the hopping leaves $\xi$ unrenormalised and changes only a length-independent prefactor.
+Replacing the loss by a finite-temperature bath closes the entropy balance: the ratio is independent of the bath state, and the entropy produced per unit of rectified heat grows as $1/\xi$.
+We give parameters for cold-atom momentum lattices and superconducting circuits with engineered loss.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+Directing heat is as fundamental to thermal engineering as directing charge is to electronics, and a thermal diode is the elementary building block of thermal logic and of heat management in nanoscale devices~\cite{Terraneo2002,Li2004,Chang2006,Li2012,Benenti2017}.
+All thermal rectifiers demonstrated so far share one requirement: the two directions of heat flow must probe different energy spectra, which is achieved through anharmonicity, temperature-dependent spectral overlap or structural asymmetry~\cite{Segal2005,Li2012}, and the quantum thermal diodes proposed recently are no exception~\cite{Zhang2025}.
+Because these mechanisms act locally, the resulting rectification ratios saturate at values of order one to ten and do not improve with the size of the device.
+
+A qualitatively different source of directionality has emerged in non-Hermitian physics.
+Lattices with asymmetric hopping~\cite{Hatano1996} pile all their eigenstates up at one edge, the non-Hermitian skin effect~\cite{Yao2018,Gong2018,Lee2019,Okuma2020,Bergholtz2021}, and the same phenomenon appears in the Liouvillian of an open quantum system whose dissipators carry a direction~\cite{Song2019,Haga2021,Metelmann2015,Rassaert2025,Shigedomi2026}, a directionality that survives dephasing~\cite{Wang2026}.
+Skin modes have been observed in photonic, electrical and cold-atom platforms~\cite{Weidemann2020,Helbig2020,Xiao2020,Liang2022,Zhou2025}, and amplification along a skin lattice has been proposed for sensing~\cite{McDonald2020} and observed in bosonic Kitaev chains~\cite{Busnaina2024,Slim2024}.
+Several works have connected non-Hermitian directionality with heat: a diffusive skin effect has been predicted and observed in classical thermal metamaterials~\cite{Cao2021,Liu2024}, which concerns heat conduction rather than quantum transport between reservoirs; thermal noise can be routed nonreciprocally through few-mode cascaded networks~\cite{Xuereb2018}, an effect that does not scale with system size; and the transport theory of non-Hermitian nonreciprocal systems has established conditions for reflectionless and transparent transport~\cite{Ghaemi2021}.
+However, it is not known whether directional dissipation alone can rectify heat between two thermal reservoirs, what quantity controls the ratio, whether the effect survives interactions and disorder, and what entropy it produces.
+
+In this paper we answer these questions for the simplest model, a reciprocal fermionic chain with directional bond loss between two leads, which is a boundary-driven open quantum system~\cite{Landi2022} with an additional bulk dissipator.
+We find that the ratio of the heat-current responses in the two directions obeys an exact law, $\dQ_f/\dQ_r=e^{2(L-1)/\xi}$ with $\xi$ the skin length, for any energy, temperature and on-site disorder; that the controlling quantity beyond nearest neighbours is the energy-resolved non-Bloch localisation length and not a spectral winding number; that a nearest-neighbour interaction leaves $\xi$ unrenormalised; and that the entropic cost per rectified heat grows as $1/\xi$ when the dissipator is a finite-temperature bath.
+The result shows that skin-effect rectification is a structural property of one-dimensional dissipative transport and provides a design rule, $L/\xi\gtrsim3$, for near-perfect heat diodes.
+
+The paper is organised as follows.
+Section~\ref{sec:model} defines the model, the Gaussian solution, the leads and the rectification measure.
+Section~\ref{sec:law} proves the exact law and discusses its immediate consequences.
+Section~\ref{sec:nonbloch} treats next-nearest-neighbour hopping and identifies the non-Bloch exponent.
+Section~\ref{sec:int} presents the matrix-product-state method, its precision and the results for the interacting chain.
+Section~\ref{sec:thermo} introduces the finite-temperature bulk bath and the entropy balance.
+Section~\ref{sec:disorder} covers on-site and bond disorder, Sec.~\ref{sec:exp} the experimental parameters, and Sec.~\ref{sec:conclusion} concludes.
+We set $\hbar=k_B=1$ and use $T_h=J$, $T_c=0.5J$ and lead chemical potential $\mu=0$ unless stated otherwise.
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{fig1.pdf}
+\caption{Heat rectification by directional bond loss obeys the exact law $\dQ_f/\dQ_r=e^{2(L-1)/\xi}$.
+(a) Reciprocal chain (hopping $-J$) between leads at $T_L$ and $T_R$; every bond carries the loss operator $L_j$, which fixes the skin length $\xi^{-1}=\ln|t_-/t_+|$ and favours transport from left to right.
+(b) Logarithm of the ratio of the forward and reverse $\Delta T$ responses against $2(L-1)/\xi$ for $\phi=\pi/2$, $T_h=J$, $T_c=0.5J$ and wide-band leads ($\Gamma=J$); all lengths and loss rates fall on the line $y=x$ to machine precision.
+(c) Rectification $\R=\tanh[(L-1)/\xi]$ (black, dashed line is the law) and forward throughput $\dQ_f$ (red) against $\kappa$ for $L=40$; $\R>0.99$ is reached at $\kappa\simeq0.07J$ where $\dQ_f$ is still half of its $\kappa\to0$ value.
+}
+\label{fig1}
+\end{figure*}
+
+\section{Model and formalism}
+\label{sec:model}
+
+\subsection{Chain with directional bond dissipation}
+
+We consider spinless fermions on an open chain of $L$ sites, $H=-J\sum_{j=1}^{L-1}(c_j^\dagger c_{j+1}+{\rm h.c.})$, whose density matrix obeys the Lindblad equation $\dot\rho=-i[H,\rho]+\sum_a\mathcal{D}[L_a]\rho$ with one jump operator per bond,
+\begin{equation}
+L_j=\sqrt{\kappa}\,\bigl(c_j+e^{i\phi}c_{j+1}\bigr),\qquad j=1,\dots,L-1 ,
+\label{eq:Lj}
+\end{equation}
+in addition to the jump operators of the leads [Fig.~\ref{fig1}(a)].
+The Hamiltonian is reciprocal; the phase $\phi$ in the dissipator is the only source of directionality.
+Equation~(\ref{eq:Lj}) is the chiral-damping dissipator of Song, Yao and Wang~\cite{Song2019} and the standard route to the Liouvillian skin effect~\cite{Haga2021}; it is obtained by coupling two neighbouring sites to a common strongly damped auxiliary mode with a relative coupling phase and eliminating that mode adiabatically~\cite{Metelmann2015}.
+Site 1 (site $L$) is coupled to a fermionic lead at temperature $T_L$ ($T_R$) and chemical potential $\mu$.
+
+\subsection{Gaussian steady state and effective non-Hermitian matrix}
+
+Without interactions the Lindbladian is quadratic: $H=\sum_{mn}h_{mn}c_m^\dagger c_n$ and every jump operator is linear, $L_a=\sum_m l_{a,m}c_m$ (loss) or $L_a=\sum_m g_{a,m}c_m^\dagger$ (gain).
+The two-point function $C_{mn}=\langle c_m^\dagger c_n\rangle$ then obeys the closed equation
+\begin{equation}
+\dot C=-(XC+CX^\dagger)+M_g^{T},\qquad X=\tfrac12(M_l+M_g^{T})-ih^{T},
+\label{eq:lyap}
+\end{equation}
+with $M_l=\sum_a l_al_a^\dagger$ and $M_g=\sum_a g_ag_a^\dagger$, whose steady state solves the Lyapunov equation $XC+CX^\dagger=M_g^{T}$.
+We solve it with a Bartels--Stewart solver and have verified the solution against the exact steady state of the full many-body Lindbladian on four modes to $10^{-8}$.
+The energy and particle currents from reservoir $\alpha$ into the system follow from the jump operators that belong to $\alpha$ and from $h$ and $C$.
+Single-particle amplitudes propagate with the non-Hermitian matrix $\heff=h-\tfrac{i}{2}(M_l^{T}+M_g)$, which for the bond loss of Eq.~(\ref{eq:Lj}) reads
+\begin{equation}
+\heff=h-\tfrac{i}{2}\textstyle\sum_j \bar l_j\, l_j^{T},\qquad
+t_\pm=-J-\tfrac{i\kappa}{2}e^{\pm i\phi},
+\label{eq:heff}
+\end{equation}
+where $l_j$ is the coefficient vector of $L_j$ and $t_+\equiv(\heff)_{j,j+1}$, $t_-\equiv(\heff)_{j+1,j}$ are the two hopping amplitudes.
+The on-site part of $\heff$ is a uniform loss $-i\kappa$ ($-i\kappa/2$ on the two end sites), and the two hopping amplitudes differ in modulus, $|t_\mp|^2=(J\pm\tfrac{\kappa}{2}\sin\phi)^2+\tfrac{\kappa^2}{4}\cos^2\phi$.
+For $\phi=\pi/2$, $\heff$ is the Hatano--Nelson chain~\cite{Hatano1996} with real asymmetric hoppings $-J\mp\kappa/2$ and a uniform loss; all its right eigenvectors are localised at the right edge with inverse localisation length
+\begin{equation}
+\xi^{-1}=\ln\Bigl|\frac{t_-}{t_+}\Bigr|\simeq\frac{\kappa\sin\phi}{J}\quad(\kappa\ll J).
+\label{eq:xi}
+\end{equation}
+
+\subsection{Leads}
+
+Two implementations of the leads are used.
+(i) \emph{Wide-band leads}: the end sites acquire a self-energy $-i\Gamma/2$ and the heat currents are given by Landauer formulas with the transmissions
+\begin{equation}
+T_{RL}(\varepsilon)=\Gamma^2|G_{L1}(\varepsilon)|^2,\qquad T_{LR}(\varepsilon)=\Gamma^2|G_{1L}(\varepsilon)|^2,
+\label{eq:T}
+\end{equation}
+where $G(\varepsilon)=(\varepsilon-\heff)^{-1}$ and $T_{RL}$ ($T_{LR}$) describes transport from the left lead to the right lead (from right to left); we use $\Gamma=J$ and integrate over $|\varepsilon|\le4J$.
+(ii) \emph{Mesoscopic leads}: $K$ modes equally spaced in $[-W,W]$, each coupled to its end site with amplitude $v=\sqrt{\Gamma\Delta\varepsilon/2\pi}$ and thermalised by loss and gain at rates $\gamma(1-f)$ and $\gamma f$, with $f$ the Fermi function at $(T_\alpha,\mu)$ and $\gamma=\Delta\varepsilon$ the mode spacing.
+The lead modes are part of the quadratic Lindbladian, so Eq.~(\ref{eq:lyap}) applies unchanged, and the construction carries over to the interacting chain of Sec.~\ref{sec:int}.
+We use $K=10$ and $W=4J$ for the matrix-product-state runs and $K=10$--$80$ for checks.
+The heat-current responses of the two implementations agree within $5$--$15\%$, the difference being a bandwidth effect.
+
+\subsection{Rectification measure}
+
+Rectification must be defined with care in a system that also loses energy to the bulk dissipator.
+The total heat current absorbed by the cold lead contains a contribution that does not depend on the temperature of the other lead, because both leads lose energy to the loss channel.
+If rectification is defined from total currents, this background dominates and the apparent rectification decays as $1/L$ for any $\kappa$, although the device is perfectly directional.
+We therefore use the response of the cold lead to heating the other lead,
+\begin{align}
+\dQ_f&=\dot E_R(T_L{=}T_h,T_R{=}T_c)-\dot E_R(T_c,T_c),\nonumber\\
+\dQ_r&=\dot E_L(T_L{=}T_c,T_R{=}T_h)-\dot E_L(T_c,T_c),
+\label{eq:dQ}
+\end{align}
+where $\dot E_\alpha$ is the energy absorbed per unit time by lead $\alpha$: $\dQ_f$ is the additional heat absorbed by the right lead when the left lead is heated from $T_c$ to $T_h$, and $\dQ_r$ the additional heat absorbed by the left lead when the right lead is heated.
+These differences remove the background exactly.
+We quote the ratio $\dQ_f/\dQ_r$ and the rectification coefficient
+\begin{equation}
+\R=\frac{|\dQ_f|-|\dQ_r|}{|\dQ_f|+|\dQ_r|}.
+\end{equation}
+In the wide-band limit both responses take the Landauer form
+\begin{equation}
+\dQ_{f,r}=\int\frac{d\varepsilon}{2\pi}\,\varepsilon\,T_{RL,LR}(\varepsilon)\,[f_h(\varepsilon)-f_c(\varepsilon)],
+\label{eq:landauer}
+\end{equation}
+with $f_{h,c}$ the Fermi functions at $T_{h,c}$.
+
+\section{Exact rectification law}
+\label{sec:law}
+
+\subsection{Tridiagonal identity}
+
+For a tridiagonal matrix $A$ of dimension $L$ with sub-diagonal elements $a_{j+1,j}$ and super-diagonal elements $a_{j,j+1}$, the corner elements of the inverse are
+\begin{align}
+(A^{-1})_{L1}&=\frac{(-1)^{L+1}}{\det A}\prod_{j=1}^{L-1}a_{j+1,j},\nonumber\\
+(A^{-1})_{1L}&=\frac{(-1)^{L+1}}{\det A}\prod_{j=1}^{L-1}a_{j,j+1}.
+\end{align}
+Indeed, the minor obtained by deleting the first row and the last column of $A$ is triangular with the sub-diagonal of $A$ on its diagonal, and likewise for the other corner.
+With $A=\varepsilon-\heff$ this gives
+\begin{equation}
+\frac{G_{L1}(\varepsilon)}{G_{1L}(\varepsilon)}=\prod_{j=1}^{L-1}\frac{(\heff)_{j+1,j}}{(\heff)_{j,j+1}}=\Bigl(\frac{t_-}{t_+}\Bigr)^{L-1}.
+\label{eq:Gratio}
+\end{equation}
+The product involves no diagonal element, so it is independent of $\varepsilon$, of the on-site energies, of the end self-energies and of the uniform loss.
+Hence
+\begin{equation}
+\frac{T_{RL}(\varepsilon)}{T_{LR}(\varepsilon)}=\frac{\dQ_f}{\dQ_r}=\Bigl|\frac{t_-}{t_+}\Bigr|^{2(L-1)}\equiv e^{2(L-1)/\xi},
+\label{eq:law}
+\end{equation}
+and therefore $\R=\tanh[(L-1)/\xi]$.
+The second equality holds because the ratio of the energy-resolved transmissions is a constant and the two thermal averages of Eq.~(\ref{eq:landauer}) share the same weight.
+
+\subsection{Consequences}
+
+Equation~(\ref{eq:law}) has four immediate consequences.
+First, the ratio is the same for any pair of lead distributions, at any temperatures and chemical potentials and for any temperature difference, not only in linear response.
+Second, the argument does not use the fermionic nature of the carriers: for bosons with the same bond loss the weight in Eq.~(\ref{eq:landauer}) is a difference of Bose functions and the ratio is unchanged.
+Third, the ratio is independent of any on-site potential $\varepsilon_j$, random or not (Sec.~\ref{sec:disorder}).
+Fourth, the law holds for the mesoscopic leads as well, since they modify only the end self-energies, which are diagonal.
+
+Figure~\ref{fig1}(b) confirms Eq.~(\ref{eq:law}) to all digits for $L=5$--$160$ and $\kappa=0.003J$--$0.5J$, a scaling collapse of all lengths and loss rates onto one line.
+Figure~\ref{fig1}(c) shows the design trade-off: $\R$ exceeds $0.99$ once $(L-1)/\xi>2.65$, i.e.\ $L/\xi\gtrsim3$, whereas the forward throughput decreases with $\kappa$ because the same loss that creates the skin effect removes energy from the chain; at $\kappa=0.07J$ and $L=40$ one has $\R=0.992$ with $\dQ_f$ equal to $49\%$ of its lossless value.
+Equation~(\ref{eq:law}) is odd in $\phi$ and the rectification vanishes identically at $\phi=0,\pi$, where the dissipator is mirror symmetric.
+
+\subsection{Same-chirality gain and the infinite-temperature bath}
+\label{sec:gain}
+
+Adding to every bond the gain operator $G_j=\sqrt{\kappa g}\,(c_j^\dagger+e^{-i\phi}c_{j+1}^\dagger)$ produces a matrix $M_g$ with the same elements as $M_l^{T}$, so $\heff$ is obtained from the pure-loss one by $\kappa\to\kappa(1+g)$: the law keeps its form with a shorter $\xi$.
+Consequently a local bath at infinite temperature and zero chemical potential, implemented as loss $\kappa/2$ plus gain $\kappa/2$ of the same chirality, has exactly the free-fermion ratio of a pure loss $\kappa$.
+We use this configuration in Sec.~\ref{sec:int} to test whether the occupation of the dissipator matters in the presence of interactions.
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{fig2.pdf}
+\caption{Beyond nearest neighbours the rectification exponent is the energy-resolved non-Bloch localisation length, not the spectral winding number.
+(a) Logarithmic transmission asymmetry against energy for a reciprocal next-nearest-neighbour hopping $t_2$ ($\kappa=0.2J$, $L=40$, $\phi=\pi/2$); solid lines are exact, dotted lines are $2(L-1)\ln|\beta_2\beta_3|(\varepsilon)$ from the roots of Eq.~(\ref{eq:nonbloch}). For $t_2=0$ the asymmetry is the constant of Eq.~(\ref{eq:law}).
+(b) Periodic-boundary spectrum of $\heff$ in the complex plane; the loop touches the real axis at a single point, so the winding number around every transport energy $\varepsilon\in\mathbb{R}$ is zero for all $t_2$.
+(c) Thermally averaged ratio $\ln(\dQ_f/\dQ_r)$ against $t_2$; the nearest-neighbour law (dashed) is an upper bound and the rectification remains above $0.97$ for all points.
+}
+\label{fig2}
+\end{figure*}
+
+\section{Beyond nearest neighbours: the non-Bloch exponent}
+\label{sec:nonbloch}
+
+Equation~(\ref{eq:law}) relies on tridiagonality.
+Adding a reciprocal next-nearest-neighbour hopping $t_2\sum_j(c_j^\dagger c_{j+2}+{\rm h.c.})$ breaks it and makes the transmission asymmetry strongly energy dependent [Fig.~\ref{fig2}(a)]: it peaks near the lower band edge, decreases monotonically at high energy, and for $t_2\gtrsim0.3J$ even changes sign in a narrow window.
+
+The non-Bloch band theory of the skin effect~\cite{Yao2018,Yokomizo2019} explains this quantitatively.
+Writing bulk solutions of $\heff\psi=\varepsilon\psi$ as $\psi_j=\beta^j$ gives the characteristic equation
+\begin{equation}
+t_2\beta^2+t_+\beta-i\kappa-\varepsilon+t_-\beta^{-1}+t_2\beta^{-2}=0,
+\label{eq:nonbloch}
+\end{equation}
+whose four roots, ordered as $|\beta_1|\le|\beta_2|\le|\beta_3|\le|\beta_4|$, satisfy $\beta_1\beta_2\beta_3\beta_4=1$ by Vieta's formula.
+For a long open chain the transfer of amplitude between the two ends is dominated by the two roots of intermediate modulus, which form the generalised Brillouin zone when $|\beta_2|=|\beta_3|$; the amplitude transported from left to right scales as $|\beta_3|^{L}$ and that from right to left as $|\beta_2|^{-L}$, so that
+\begin{equation}
+\ln\frac{T_{RL}(\varepsilon)}{T_{LR}(\varepsilon)}=2(L-1)\ln|\beta_2(\varepsilon)\beta_3(\varepsilon)|+O(1).
+\label{eq:nonblochlaw}
+\end{equation}
+For $t_2=0$ the equation is quadratic with $\beta_1\beta_2=t_-/t_+$, the $O(1)$ term vanishes identically and Eq.~(\ref{eq:law}) is recovered.
+Equation~(\ref{eq:nonblochlaw}) reproduces the exact transmissions for all $t_2\le0.5J$ at $\kappa=0.1J$, $0.2J$ and $0.3J$ [dotted lines in Fig.~\ref{fig2}(a) for $\kappa=0.2J$].
+The thermally averaged ratio therefore becomes the Fermi-window average of an energy-resolved skin length, $\xi(\varepsilon)^{-1}=\ln|\beta_2\beta_3|(\varepsilon)$, and it lies below the nearest-neighbour value [Fig.~\ref{fig2}(c)], for example $15.65\to8.11$ at $\kappa=0.2J$ when $t_2$ grows from $0$ to $0.5J$, while $\R$ stays above $0.97$.
+
+This identifies the correct indicator of thermal nonreciprocity.
+The spectral winding number around a reference energy is the usual topological marker of the skin effect~\cite{Gong2018,Okuma2020,Zhang2020}.
+The periodic-boundary spectrum of $\heff$ for $\phi=\pi/2$ is
+\begin{equation}
+E(k)=-2J\cos k+2t_2\cos 2k-i\kappa(1-\sin k).
+\end{equation}
+Its imaginary part is non-positive and vanishes only at $k=\pi/2$, so the loop touches the real axis at one point [Fig.~\ref{fig2}(b)] and the winding number $w(\varepsilon)=(2\pi i)^{-1}\oint dk\,\partial_k\ln[E(k)-\varepsilon]$ is zero for every real $\varepsilon$ and every $t_2$.
+The winding around the centre of the loop, $-i\kappa$, is $-1$ and signals the skin effect, but it is a single integer and cannot encode the energy dependence, the sign change and the $t_2$ dependence of the transmission asymmetry.
+The chain rectifies although $w(\varepsilon)=0$: what matters is the radius ratio of the generalised Brillouin zone at the transport energy, not the winding of the spectrum.
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{fig3.pdf}
+\caption{A nearest-neighbour interaction does not renormalise the skin length and acts as a length-independent prefactor.
+Superfermion matrix-product-state steady states with mesoscopic leads ($K=10$ modes, bandwidth $4J$), $\phi=\pi/2$, bond dimension $\chi=256$, time step $0.05/J$.
+(a) $\ln(\dQ_f/\dQ_r)$ against $L$ for $\kappa=0.05J$ (blue) and $0.1J$ (red); lines are the exact free-fermion result, open symbols the $V=0$ simulation, filled symbols $V=2J$; green diamonds replace the pure loss by a local infinite-temperature bath (loss $\kappa/2$ plus same-chirality gain $\kappa/2$). Error bars are the deviation of the $V=0$ simulation from the exact value.
+(b) Interaction offset $\Delta_V=\ln(\dQ_f/\dQ_r)|_{V=2J}-\ln(\dQ_f/\dQ_r)|_{V=0}$; it is independent of $L$ and of the bath occupation.
+(c) Slope of $\ln(\dQ_f/\dQ_r)$ against $L$, normalised to its free-fermion value $2/\xi$, against $V$; open symbols are $\chi=128$ series over $L=12,16,20$, filled symbols the $\chi=256$ series.
+(d) Forward throughput relative to $V=0$.
+}
+\label{fig3}
+\end{figure*}
+
+\section{Interacting chain}
+\label{sec:int}
+
+Does the law survive when quasiparticles scatter, given that interactions can create, reshape or destroy skin effects~\cite{Brighi2024,Koh2026,Roccati2026}?
+We add the interaction $V\sum_j n_jn_{j+1}$ and compute the steady state of the full Lindbladian with matrix-product states (MPS).
+
+\subsection{Superfermion matrix-product-state method}
+
+The density matrix is vectorised in the superfermion representation~\cite{Prosen2008,Dzhioev2011}, $|\rho\rangle\!\rangle=\rho|I\rangle\!\rangle$ with $|I\rangle\!\rangle=\prod_j(1+c_j^\dagger\tilde c_j^\dagger)|0\rangle$, where $\tilde c_j$ are auxiliary fermions.
+For a parity-even $\rho$ the rules $c_j\rho\to c_j$, $\rho c_j^\dagger\to-\tilde c_j$, $\rho c_j\to\tilde c_j^\dagger$ and $\rho c_i^\dagger c_j\to\tilde c_j^\dagger\tilde c_i$ map the Lindbladian onto a local operator on $2N$ fermionic modes, with $N=L+2K$; the bond dissipators $L_j\rho L_j^\dagger$ become bilinears on four modes and the interaction appears as $V n_jn_{j+1}-V\tilde n_j\tilde n_{j+1}$.
+Each physical mode is grouped with its auxiliary partner into one MPS site of local dimension four, and the conserved charge $N-\tilde N=0$ is exploited.
+Expectation values are $\langle\!\langle I|O|\rho\rangle\!\rangle/\langle\!\langle I|\rho\rangle\!\rangle$.
+The lead jump operators commute with the interaction, so the lead energy currents are two-point functions and the current formulas of the Gaussian problem apply unchanged.
+
+The $L$ chain sites and the $2K$ lead modes are arranged as [site 1][left lead][sites $2\dots L$][right lead], which keeps all long-range couplings anchored at a chain end and the bond dimension of the matrix-product operator of the Lindbladian at six.
+The state is propagated with the second-order $W^{\rm II}$ matrix-product-operator exponential~\cite{Zaletel2015} of TeNPy~\cite{Hauschild2018} in steps $dt$, with singular-value compression at bond dimension $\chi$ and cutoff $10^{-12}$, starting from the product state with the exact Gaussian occupations, until the change of both lead currents over a time window of $2/J$ is below $10^{-5}J^2$ or $t=60/J$ is reached.
+The mapping was verified exactly: on four modes with $V=0.7J$ the null vector of the vectorised Lindbladian coincides with the many-body steady state to $10^{-15}$, and for $V=0$, $L=6$, $K=4$ the propagated steady state agrees with the Lyapunov solution to $2\times10^{-3}$ in the currents.
+
+\subsection{Precision and resolvable regime}
+
+For $V=0$ the MPS result must coincide with the exact Gaussian solution, which calibrates the method.
+The reverse response $\dQ_r$ is exponentially small and is the limiting quantity.
+The truncation error of the absolute currents accumulates with the number of time steps, so it is not reduced by a smaller $dt$; it is reduced only by $\chi$.
+Table~\ref{tab:chi} lists the free-fermion calibration at $\kappa=0.05J$, $L=16$.
+At $\chi=256$ and $dt=0.05/J$ the logarithmic ratio is reproduced within $0.003$ and $\dQ_r$ within $0.03\%$; this setting is used for all production runs.
+At $\kappa=0.1J$ the residual bias of $\ln(\dQ_f/\dQ_r)$ at $\chi=256$ is $+0.045$ ($L=12$) and $-0.038$ ($L=16$), which we quote as the error bar; slopes at this $\kappa$ are extracted from the control-variate estimate $\ln r_{\rm cv}(V)=\ln r_{\rm MPS}(V)-\ln r_{\rm MPS}(0)+\ln r_{\rm exact}(0)$, with $r=\dQ_f/\dQ_r$, which cancels the common truncation bias.
+The time fluctuation over the last five windows contributes less than $0.01$ to $\ln(\dQ_f/\dQ_r)$, except for the infinite-temperature-bath run at $V=2J$, where it is $0.05$.
+
+\begin{table}[b]
+\caption{Free-fermion calibration of the MPS steady state at $\kappa=0.05J$, $L=16$, $K=10$: logarithmic ratio and reverse response compared with the exact Gaussian values $\ln(\dQ_f/\dQ_r)=1.5003$ and $\dQ_r=4.918\times10^{-3}J^2$.}
+\label{tab:chi}
+\begin{ruledtabular}
+\begin{tabular}{lcccc}
+$\chi$ & 128 & 128 & 128 & 256 \\
+$dt\,J$ & 0.1 & 0.05 & 0.025 & 0.05 \\
+\colrule
+$\ln(\dQ_f/\dQ_r)$ & 1.347 & 1.412 & 1.462 & 1.5033 \\
+$\dQ_r$ bias & $+16.8\%$ & $+7.7\%$ & $+2.6\%$ & $+0.03\%$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The floor of the absolute currents is about $10^{-3}J^2$ at $\chi=128$ and two orders of magnitude lower at $\chi=256$.
+The reverse response can therefore be resolved only when $\dQ_r/\dQ_f=e^{-2(L-1)/\xi}$ is not much smaller than $10^{-2}$, i.e.\ $2(L-1)\kappa/J\lesssim4$.
+We work at $\kappa=0.03J$--$0.1J$ and $L=12$--$20$, and use the slope of $\ln(\dQ_f/\dQ_r)$ against $L$ as the observable that measures $2/\xi_{\rm eff}$.
+For a stronger skin effect ($\kappa=0.2J$, $L=20$--$40$) the simulations yield only lower bounds, $\R\ge0.85$--$0.98$ for all $V\le2J$, together with the forward throughput, which decreases monotonically with $V$ (from $1.10$ to $0.63\times10^{-2}J^2$ at $L=20$ and from $0.70$ to $0.33\times10^{-2}J^2$ at $L=40$ for $V=0\to2J$).
+
+\subsection{Results}
+
+Figure~\ref{fig3} and Table~\ref{tab:int} show that the interaction acts as a pure prefactor.
+At $\kappa=0.05J$ and $V=2J$ the slope is $0.0975$ against the free-fermion $0.1000$, and the offset $\Delta_V=\ln(\dQ_f/\dQ_r)|_{V=2J}-\ln(\dQ_f/\dQ_r)|_{V=0}$ is $-0.42$ at both $L=16$ and $L=20$; at $\kappa=0.1J$ the slope is $0.207$ against $0.200$ and $\Delta_V=-0.54$ and $-0.52$ at $L=12$ and $16$.
+The $\chi=128$ series over $L=12,16,20$ give slopes $2/\xi_{\rm eff}=0.055$, $0.066$, $0.046$, $0.043$ ($\pm0.013$; exact $0.060$) at $\kappa=0.03J$ and $0.096$, $0.101$, $0.125$, $0.094$ ($\pm0.019$; exact $0.100$) at $\kappa=0.05J$ for $V=0$, $0.5J$, $J$, $2J$, consistent with $2/\xi$ for all $V$ within their $20\%$ uncertainty [Fig.~\ref{fig3}(c)].
+Hence $\xi$ is not renormalised by $V$ up to $2J$, to within $\pm2.5\%$ at $\kappa=0.05J$: the exponential structure $e^{2(L-1)/\xi}$ of Eq.~(\ref{eq:law}) is a property of the dissipator, and the interaction only reduces both responses, the forward one by $25$--$35\%$ at $V=2J$ [Fig.~\ref{fig3}(d)] and the reverse one less, which produces the negative offset.
+
+The offset does not depend on the occupation of the dissipator either.
+Replacing the pure loss by the local infinite-temperature bath of Sec.~\ref{sec:gain} with the same total rate gives $\Delta_V=-0.54$ at $\kappa=0.1J$, $L=12$, identical to the pure-loss value within $0.002$ [green symbols in Fig.~\ref{fig3}(b)].
+The exact invariance of the free-fermion ratio under same-chirality gain thus persists numerically in the interacting chain.
+The $V=0$ bias of the MPS is an order of magnitude smaller for the infinite-temperature bath ($+0.001$ against $+0.045$), because the steady state is closer to the maximally mixed state and carries less operator entanglement.
+
+\begin{table}[b]
+\caption{Steady-state values of $\ln(\dQ_f/\dQ_r)$ at $\chi=256$ ($dt=0.05/J$, $K=10$, $\phi=\pi/2$). ``Bath'' denotes the local infinite-temperature bath (loss $\kappa/2$ plus gain $\kappa/2$, total rate $0.1J$). The last column is the slope $d\ln(\dQ_f/\dQ_r)/dL$ at $V=2J$ against its exact free-fermion value.}
+\label{tab:int}
+\begin{ruledtabular}
+\begin{tabular}{lcccccc}
+$\kappa/J$ & $L$ & Exact & MPS & MPS & $\Delta_V$ & Slope \\
+ & & $V=0$ & $V=0$ & $V=2J$ & & $V=2J$/exact \\
+\colrule
+0.05 & 16 & 1.5003 & 1.5033 & 1.083 & $-0.42$ & \multirow{2}{*}{0.0975/0.1000} \\
+0.05 & 20 & 1.9004 & --- & 1.473 & $-0.43$ & \\
+0.1 & 12 & 2.2018 & 2.247 & 1.704 & $-0.54$ & \multirow{2}{*}{0.207/0.200} \\
+0.1 & 16 & 3.0025 & 2.964 & 2.448 & $-0.52$ & \\
+0.1 (bath) & 12 & 2.2018 & 2.203 & 1.662 & $-0.54$ & --- \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\begin{figure*}[t]
+\includegraphics[width=0.78\textwidth]{fig4.pdf}
+\caption{Thermodynamic cost and robustness of skin-effect rectification.
+(a) Entropy produced per unit of rectified heat, $\sigma_f/\dQ_f$, when every bond is coupled to a thermal bath at $T_b=T_c$ and $\mu_b=0$ ($L=40$, mesoscopic leads and baths); it grows linearly with $\kappa\propto1/\xi$ (dotted line) while the throughput $\dQ_f$ (red) decreases.
+(b) Entropy production and filling against the bath chemical potential for $\kappa=0.2J$; the ratio $\dQ_f/\dQ_r$ is identical ($\ln=14.23$) for all $\mu_b$ and $T_b$, but a particle sink ($\mu_b\to-\infty$) costs three orders of magnitude more entropy than a half-filled bath.
+(c) On-site disorder of width $W_d$ ($L=40$, $60$--$100$ samples): the rectification $\R$ (dashed, right axis) is exactly sample independent, while the median forward throughput (solid, bands are the 10th--90th percentiles) collapses by Anderson localisation.
+(d) Bond disorder ($\kappa=0.1J$): the standard deviation of $\ln(\dQ_f/\dQ_r)$ over samples grows as $\sqrt{L}$ in accordance with the sum rule of Eq.~(\ref{eq:sumrule}); only random chirality (red) destroys the rectification on average.
+}
+\label{fig4}
+\end{figure*}
+
+\section{Thermodynamic cost}
+\label{sec:thermo}
+
+\subsection{Finite-temperature bulk bath}
+
+A pure loss channel is a reservoir at zero temperature and infinitely negative chemical potential, and the entropy balance of the diode is then ill defined.
+To close it we replace each $L_j$ by a mesoscopic bath: bond $j$ is coupled to $K_b$ bath modes with energies in $[-W_b,W_b]$, thermalised at $(T_b,\mu_b)$ in the same way as the lead modes, through the bond operator $A_j=c_j+e^{i\phi}c_{j+1}$ with amplitude $v_b=\sqrt{\kappa\Delta\varepsilon_b/2\pi}$.
+The damping rate of $A_j$ is then $\kappa$, detailed balance holds, and the pure-loss model is recovered for $\mu_b\to-\infty$.
+All reservoirs now have a temperature, and the entropy production
+\begin{equation}
+\sigma=-\sum_\alpha\frac{\dot E_\alpha-\mu_\alpha\dot N_\alpha}{T_\alpha}\ge0,
+\label{eq:sigma}
+\end{equation}
+where $\dot E_\alpha$ and $\dot N_\alpha$ are the energy and particle currents from reservoir $\alpha$ into the system, is defined; the model remains quadratic and is solved with Eq.~(\ref{eq:lyap}).
+We verified $\sigma\ge0$ in all configurations and $\sigma=0$ to $10^{-8}$ when all reservoirs share one temperature.
+We use $L=40$, $K=10$ lead modes, $K_b=10$ and $W_b=4J$.
+
+\subsection{The ratio is independent of the bath state}
+
+The ratio $\dQ_f/\dQ_r$ is exactly independent of $(T_b,\mu_b)$, because both responses of Eq.~(\ref{eq:dQ}) are linear in the lead distributions and the bath contribution cancels in the difference; numerically the ratio agrees to $10^{-9}$ for $T_b=0.25J$--$2J$ and $\mu_b=0$ to $-30J$ [Fig.~\ref{fig4}(b)].
+The dissipator fixes the nonreciprocity; the occupation of the bath only fixes its cost.
+
+Because the self-energy of a discrete bath is energy dependent, the effective amplitudes $t_\pm(\varepsilon)$ are not constant and the ratio falls slightly below the wide-band law: at $\kappa=0.2J$ we obtain $\ln(\dQ_f/\dQ_r)=14.23$, $14.48$, $14.68$ and $14.95$ for $(K_b,W_b/J)=(10,4)$, $(10,6)$, $(20,4)$ or $(20,6)$, and $(40,6)$, approaching the wide-band value $15.65$.
+The Lindblad loss of Eq.~(\ref{eq:Lj}) is the exact wide-band limit.
+
+\subsection{Entropy production per rectified heat}
+
+With all baths at the cold temperature and $\mu_b=0$ the isothermal state produces no entropy, so the entropy production $\sigma_f$ of the forward configuration is that of the rectification process itself.
+It is nearly independent of $\kappa$: $\sigma_f=0.042$, $0.044$, $0.047$, $0.049$ and $0.052\,J$ for $\kappa=0.05J$, $0.1J$, $0.2J$, $0.3J$ and $0.5J$, whereas $\dQ_f=1.64$, $1.11$, $0.66$, $0.47$ and $0.29\times10^{-2}J^2$.
+The entropy produced per unit of rectified heat therefore grows as
+\begin{equation}
+\frac{\sigma_f}{\dQ_f}\propto\kappa\propto\frac{1}{\xi},
+\end{equation}
+taking the values $2.6$, $4.0$, $7.0$, $10.4$ and $18.1\,J^{-1}$ [Fig.~\ref{fig4}(a)].
+The cost is carried by the heat that leaks from the hot lead into the bulk bath, which grows from $0.026$ to $0.049\,J^2$ over the same range.
+
+The diode works at half filling with no particle current when $\mu_b=0$.
+Operating it as a particle sink drains the chain and is thermodynamically expensive: for $\kappa=0.2J$ the sweep $\mu_b=0$, $-0.5J$, $-J$, $-2J$, $-4J$, $-30J$ gives $\sigma_f=0.047$, $0.12$, $0.34$, $1.15$, $3.2$ and $25.5\,J$ and mean fillings $0.50$, $0.44$, $0.38$, $0.25$, $0.12$ and $0.10$ for the same ratio [Fig.~\ref{fig4}(b)]; the skin-like density pile-up at the edge appears only for $\mu_b<0$.
+For $T_b\neq T_c$ the isothermal state already produces entropy through heat flow between bath and leads, and the difference $\sigma_f-\sigma_{\rm iso}$ can be negative; we therefore quote the cost at $T_b=T_c$.
+
+\subsection{Mirror identity for the entropy production}
+
+We find the exact identity
+\begin{equation}
+\sigma_f(T_b=T_c)=\sigma_f(T_b=T_h),
+\label{eq:mirror}
+\end{equation}
+which holds for any $\phi$, $\kappa$ and $t_2$ and has a simple origin.
+Let $P$ be the site reflection $j\to L+1-j$.
+For the uniform chiral chain $P\heff P$ exchanges $t_+$ and $t_-$, which is also what transposition does, so $P\heff P=\heff^{T}$ and $PGP=G^{T}$.
+The two end elements of the Green function therefore coincide, $G_{LL}=(PGP)_{11}=(G^{T})_{11}=G_{11}$, and so do the reflection probabilities $R_{LL}(\varepsilon)=R_{RR}(\varepsilon)$ of the two leads, although $G_{L1}\neq G_{1L}$.
+In the multi-terminal Landauer form with all reservoirs thermal, the entropy production with every reservoir except the left lead at $T_c$ is
+\begin{equation}
+\sigma=\Bigl(\frac{1}{T_c}-\frac{1}{T_h}\Bigr)\int\frac{d\varepsilon}{2\pi}\,\varepsilon\,[f_h-f_c]\,[1-R_{LL}(\varepsilon)],
+\end{equation}
+and with every reservoir except the right lead at $T_h$ it is the same expression with $R_{RR}$, where the sum rules $\sum_\beta T_{\alpha\beta}=\sum_\beta T_{\beta\alpha}=1-R_{\alpha\alpha}$ for the transmissions $T_{\alpha\beta}$ between reservoirs have been used.
+Equal reflectances give Eq.~(\ref{eq:mirror}).
+Numerically the two sides agree to $10^{-12}$ for the clean chain; on-site disorder breaks the identity (difference $3\times10^{-3}$ for $W_d=J$) and mirror-symmetric disorder restores it ($10^{-12}$).
+Physically, the heat emitted by a hot lead into an otherwise cold device equals the heat absorbed by a cold lead from an otherwise hot device: nonreciprocity appears in transmission but not in reflection.
+
+\section{Disorder}
+\label{sec:disorder}
+
+\subsection{On-site disorder}
+
+Because Eq.~(\ref{eq:Gratio}) involves no diagonal element of $\heff$, on-site disorder of any strength and distribution leaves $T_{RL}(\varepsilon)/T_{LR}(\varepsilon)$, $\dQ_f/\dQ_r$ and $\R$ exactly unchanged, sample by sample.
+For $\varepsilon_j$ uniform in $[-W_d/2,W_d/2]$, $L=40$ and wide-band leads, the rectification is sample independent to $10^{-14}$: $\R=0.9604$, $0.9992$ and $1.0000$ for $\kappa=0.05J$, $0.1J$ and $0.2J$ at every $W_d$ [Fig.~\ref{fig4}(c)].
+The throughput, in contrast, collapses by Anderson localisation: at $\kappa=0.1J$ the median $\dQ_f$ is $1.62$, $1.26$, $0.61$, $0.051$, $0.0014$ and $0.00016\times10^{-2}J^2$ for $W_d=0$, $0.5J$, $J$, $2J$, $3J$ and $4J$.
+The rectification is thus independent of eigenstate localisation, which affects both directions equally; the only practical requirement is a usable throughput, $W_d\lesssim2J$ for $\dQ_f\gtrsim10^{-3}J^2$.
+
+Table~\ref{tab:decay} lists the forward decay rate $-d\langle\ln\dQ_f\rangle/dL$ between $L=10$ and $80$.
+In the weak-disorder regime the loss-induced and Anderson decay rates are nearly additive.
+The skin effect does not delocalise the forward direction, which is attenuated by loss and localisation alike; it fixes the ratio of the two directions and nothing else.
+
+\begin{table}[b]
+\caption{Forward decay rate $-d\langle\ln\dQ_f\rangle/dL$ per site ($L=10\to80$, $60$ samples) for on-site disorder of width $W_d$.}
+\label{tab:decay}
+\begin{ruledtabular}
+\begin{tabular}{lccc}
+ & $W_d=0.5J$ & $W_d=J$ & $W_d=2J$ \\
+\colrule
+$\kappa=0$ & 0.006 & 0.020 & 0.055 \\
+$\kappa=0.05J$ & 0.017 & 0.034 & 0.090 \\
+$\kappa=0.2J$ & 0.027 & 0.044 & 0.107 \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\subsection{Bond disorder and the sum rule}
+
+With bond-dependent $\kappa_j$ and $\phi_j$ the hopping amplitudes are $t_{\mp,j}=-J-\tfrac{i\kappa_j}{2}e^{\mp i\phi_j}$ and Eq.~(\ref{eq:Gratio}) gives the sum rule
+\begin{equation}
+\ln\frac{\dQ_f}{\dQ_r}=2\sum_{j=1}^{L-1}\ln\Bigl|\frac{t_{-,j}}{t_{+,j}}\Bigr|,
+\label{eq:sumrule}
+\end{equation}
+which we verified to $10^{-14}$ on $10^2$ random samples with on-site disorder present at the same time.
+The exponent is a sum of independent bond contributions: it is self-averaging, with sample-to-sample fluctuations $\propto\sqrt{L}$ and a relative width that vanishes for long chains [Fig.~\ref{fig4}(d)].
+At $\kappa=0.1J$ a spread of loss rates, $\kappa_j=\kappa(1\pm0.8u)$ with $u$ uniform in $[0,1]$, leaves the mean unchanged ($3.75$, $7.85$ and $15.83$ against the clean $3.80$, $7.81$ and $15.81$ for $L=20$, $40$ and $80$) with standard deviations $0.43$, $0.55$ and $0.88$.
+A spread of phases, $\phi_j=\pi/2\pm1$, rescales the mean by $\langle\sin\phi_j\rangle=\sin1\simeq0.84$ ($6.56$ against $7.81\times0.84=6.57$ for $L=40$) with standard deviations $0.13$--$0.25$.
+Only random chirality, $\phi_j=\pm\pi/2$ with equal probability, destroys the rectification on average: the means are $-0.07$, $-0.04$ and $0.16$ and the standard deviations $0.91$, $1.34$ and $1.77$, so the rectification direction is random from sample to sample.
+
+\subsection{Disorder beyond nearest neighbours}
+
+With $t_2\neq0$ the on-site invariance is lost and the ratio becomes sample dependent, but only weakly: for $t_2=0.3J$ and $\kappa=0.2J$ we find $\ln(\dQ_f/\dQ_r)=10.12\pm0.11$, $9.71\pm0.19$ and $9.42\pm0.30$ for $W_d=0.5J$, $J$ and $2J$, against the clean value $10.31$.
+
+\section{Experimental realisation}
+\label{sec:exp}
+
+The bond loss of Eq.~(\ref{eq:Lj}) follows from coupling neighbouring sites to a strongly damped auxiliary mode $a_j$, $g(c_j^\dagger a_j+e^{i\phi}c_{j+1}^\dagger a_j+{\rm h.c.})$, with decay rate $\Gamma_a\gg g$, giving $\kappa=4g^2/\Gamma_a$.
+Table~\ref{tab:exp} summarises parameter sets for two platforms; the requirement $\R>0.99$ corresponds to $(L-1)/\xi>2.65$ with $\xi\simeq J/\kappa$ at $\phi=\pi/2$.
+
+In momentum-lattice Bose condensates a dissipative Aharonov--Bohm chain of exactly this type has produced the non-Hermitian skin effect~\cite{Liang2022}; with $J=2\pi\times0.5$~kHz, $\kappa/J=0.05$--$0.2$ requires $\kappa=2\pi\times25$--$100$~Hz, and $\R>0.99$ needs $L\simeq15$ sites at $\kappa/J=0.2$.
+Thermal leads are provided by the two-terminal geometry of cold-atom transport~\cite{Brantut2012,Krinner2017}, and $\dQ_{f,r}$ follow from the energy and atom-number changes of the reservoirs.
+
+In superconducting circuits ($J=2\pi\times10$--$50$~MHz) a low-$Q$ auxiliary resonator per bond with $\Gamma_a\sim2\pi\times10$~MHz and $g\sim2\pi\times1$--$3$~MHz gives $\kappa=2\pi\times0.5$--$2$~MHz, with thermal leads realised by noise temperatures of $20$--$300$~mK injected into the end transmission lines.
+The carriers are then photons, but Eq.~(\ref{eq:law}) is an identity of single-particle Green functions and holds for bosons with pure loss as well (Sec.~\ref{sec:law}).
+Skin effects have so far been reached in superconducting hardware through squeezing in multimode cavities~\cite{Busnaina2024} and by post-selection on digital processors~\cite{Shen2025}; a loss-engineered Liouvillian skin effect in a circuit has not been reported, although its photonic counterpart has~\cite{Yang2026}, and the heat diode proposed here is a natural first target for one.
+Both platforms tolerate the site-to-site frequency disorder that is unavoidable in practice, because it does not enter Eq.~(\ref{eq:law}).
+
+\begin{table}[t]
+\caption{Parameter sets for the two proposed platforms.}
+\label{tab:exp}
+\begin{ruledtabular}
+\begin{tabular}{lcc}
+ & Cold atoms & Superconducting \\
+ & (momentum lattice) & circuit \\
+\colrule
+$J/2\pi$ & 0.5 kHz & 10--50 MHz \\
+$\Gamma_a/2\pi$ & optical loss & $\sim10$ MHz \\
+$g/2\pi$ & Raman coupling & 1--3 MHz \\
+$\kappa/2\pi$ & 25--100 Hz & 0.5--2 MHz \\
+$\kappa/J$ & 0.05--0.2 & 0.05--0.2 \\
+$L$ for $\R>0.99$ & 15--60 & 15--60 \\
+Thermal leads & two-terminal & noise temperature \\
+ & reservoirs~\cite{Brantut2012,Krinner2017} & 20--300 mK \\
+Carriers & atoms & photons \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have shown that a reciprocal chain with directional bond dissipation is a heat diode whose rectification ratio is fixed by one number, the Liouvillian skin length, through an exact exponential law, and we have mapped the law's domain of validity in four directions: beyond nearest neighbours, with interactions, with a thermal dissipator and with disorder.
+
+Two trends organise the results.
+The exponent is a transport property of the dissipator: it is the non-Bloch localisation length at the transport energy, it is blind to the spectral winding number, to on-site disorder and to the bath occupation, and it is not renormalised by interactions up to $V=2J$.
+In contrast, every mechanism that makes the device less ideal acts on the prefactor: interactions, next-nearest-neighbour hopping and Anderson localisation all lower the throughput and never the slope.
+Quantitatively, the ratio grows as $e^{2(L-1)/\xi}$ and reaches $\R>0.99$ at $L/\xi\simeq3$, in contrast to the size-independent ratios of nonlinear thermal rectifiers~\cite{Li2012}, and the price is an entropy production per rectified heat of order $\kappa$.
+
+These results place skin-effect transport in the same category as topological edge transport: a directional response set by a bulk length rather than by local details, with disorder affecting only the magnitude.
+They also carry a warning for experiments on dissipative lattices: a heat or particle current asymmetry that is not measured as a function of length cannot be attributed to the skin effect, because the prefactor is model dependent while only the exponent is universal, and the entropy budget must be measured against the bath occupation and not against the loss rate alone.
+Two questions remain open: whether the slope stays unrenormalised for interactions strong enough to drive the chain into a correlated insulator, and whether the identity of Eq.~(\ref{eq:mirror}) reflects a fluctuation relation for Liouvillian skin systems.
+Engineered dissipation is now routine in cold atoms and circuits, and the law derived here gives a direct, size-resolved test of whether a dissipative lattice rectifies heat for the right reason.
+
+\begin{acknowledgments}
+Matrix-product-state simulations used TeNPy~\cite{Hauschild2018}.
+\end{acknowledgments}
+
+\section*{Data availability}
+The data that support the findings of this article, including the matrix-product-state time series behind Fig.~\ref{fig3}, are publicly available on Zenodo~\cite{skinheatZenodo}. The code used to generate and analyse the data and the scripts that regenerate every figure from the stored data files are available from Refs.~\cite{skinheatZenodo,skinheatGitHub}.
+
+\bibliographystyle{apsrev4-2}
+\bibliography{refs}
+
+\end{document}

@@ -12,7 +12,7 @@ LIST OF CHANGES (relative to LX20531)
 
 1. Format. The Letter and its Supplemental Material are merged into one regular article with nine numbered sections, four figures, four tables and 50 references. There is no Supplemental Material.
 
-2. Abstract. Rewritten for the regular-article format (227 words). It now states the origin of the law (an identity of tridiagonal Green functions), the sum rule for bond disorder and the validity for bosonic carriers.
+2. Abstract. Rewritten for the regular-article format (228 words). It now states the origin of the law (an identity of tridiagonal Green functions), the sum rule for bond disorder and the validity for bosonic carriers.
 
 3. Introduction. A paragraph on related work was added (diffusive skin effect in thermal metamaterials, nonreciprocal routing of thermal noise in cascaded networks, transport theory of non-Hermitian nonreciprocal systems, boundary-driven open quantum systems); these references were previously cited only in the Supplemental Material. A paragraph outlining the sections and stating the units and default parameters was added.
 

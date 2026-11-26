@@ -4,7 +4,7 @@ Regular article for Physical Review B, built 2026-11-11 from the PRL Letter and 
 
 | File | Purpose |
 |---|---|
-| `main.tex`, `main.pdf`, `main.bbl` | Article: REVTeX 4.2 `prb` reprint, 10 pages, 9 sections, 4 figures, 4 tables, 50 references; abstract 227 words; main text about 4603 words |
+| `main.tex`, `main.pdf`, `main.bbl` | Article: REVTeX 4.2 `prb` reprint, 10 pages, 9 sections, 4 figures, 4 tables, 50 references; abstract 228 words; main text about 4603 words |
 | `refs.bib`, `figures/fig1–4.pdf` | Bibliography (all entries verified) and figures (regenerate with `../make_figures.py`) |
 | `RESUBMISSION-CHANGES.md` | Text for the resubmission form: response (no reviewer comments were issued for LX20531) and numbered list of changes |
 | `cover_letter.tex`, `cover_letter.pdf` | Summary, why PRB, **disclosure of the PRL submission LX20531**, five suggested referees, data statement |

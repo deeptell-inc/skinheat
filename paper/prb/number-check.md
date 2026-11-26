@@ -3,7 +3,9 @@
 | III B | threshold (L-1)/xi for R>0.99 | 2.65 | 2.6467 | atanh(0.99) | OK |
 | III B | R at kappa=0.07J, L=40 | 0.992 | 0.99179 | deltaT_rectification.json kappa[] | OK |
 | III B | dQf(kappa=0.07)/dQf(kappa=0) in % | 45 | 44.676 | json + chain_heff(kappa=0) | OK |
-| III B | Fig. 1(b): max deviation from the law (ln ratio < 30) | 1e-08 | 4.6185e-14 | deltaT_rectification.json L{} | OK |
+| III B | Fig. 1(b): max |ln ratio - law| for predicted ln ratio <= 48 | 2e-11 | 1.0481e-11 | deltaT_rectification.json | OK |
+| III B | Fig. 1(b): |ln ratio - law| at the point with predicted ln ratio 72 | 2e-06 | 1.625e-06 | deltaT_rectification.json | OK |
+| III B | Fig. 1(b): number of stored points beyond 75 (omitted from the figure) and its predicted ln ratio | 1, 96 | 1, 96.125 | deltaT_rectification.json | OK |
 | III B | L range in Fig. 1(b) | 5, 160 | 5, 160 | json | OK |
 | III B | kappa range in Fig. 1(b) | 0.003, 0.5 | 0.0031623, 0.48919 | json | OK |
 | III B | mesoscopic leads obey the law (K=80, L=12, kappa=0.05): |ln ratio - law| | 1e-06 | 4.8901e-12 | package | OK |
@@ -76,11 +78,11 @@
 | VI D | same with on-site disorder of width W_d = J (16 sites) | 0.0003 | 0.00031534 | package | OK |
 | VI D | same with mirror-symmetric disorder | 1e-12 | 1.2209e-13 | package | OK |
 | VII A | R for kappa = 0.05, 0.1, 0.2 (every W_d) | 0.9604, 0.9992, 1 | 0.96035, 0.99919, 1 | disorder.json onsite | OK |
-| VII A | sample independence of the ln ratio (max deviation from the law) | 1e-13 | 7.1054e-15 | onsite ln_max_dev | OK |
+| VII A | sample independence of the ln ratio (max deviation from the law) | 1e-14 | 7.1054e-15 | onsite ln_max_dev | OK |
 | VII A | median dQf (1e-2) at kappa=0.1 for W_d = 0, 0.5, 1, 2, 3, 4 | 1.62, 1.26, 0.61, 0.051, 0.0014, 1.6e-05 | 1.6212, 1.2562, 0.6088, 0.051479, 0.0013976, 1.6441e-05 | onsite Qf_median | OK |
 | VII A | largest W_d with median dQf >= 1e-3 for all three kappa | 1.5 | 1.5 | onsite Qf_median | OK |
 | VII A / Table III | forward decay rates (rows kappa = 0, 0.05, 0.2; columns W_d = 0.5, 1, 2) | 0.006, 0.02, 0.055, 0.017, 0.034, 0.09, 0.027, 0.044, 0.107 | 0.0061991, 0.019803, 0.055182, 0.017073, 0.033572, 0.090052, 0.027028, 0.044027, 0.10718 | disorder.json Ldep | OK |
-| VII B | sum rule: max deviation over samples | 1e-13 | 2.1316e-14 | disorder.json bond | OK |
+| VII B | sum rule: max deviation over samples | 3e-14 | 2.1316e-14 | disorder.json bond | OK |
 | VII B | kappa spread: means (L=20,40,80) | 3.75, 7.85, 15.83 | 3.7535, 7.8514, 15.826 | bond | OK |
 | VII B | clean values | 3.8, 7.81, 15.81 | 3.8032, 7.8065, 15.813 | bond | OK |
 | VII B | kappa spread: standard deviations | 0.43, 0.55, 0.88 | 0.42545, 0.54899, 0.87564 | bond | OK |
@@ -94,6 +96,6 @@
 | VIII | kappa/2pi (Hz) for J/2pi = 0.5 kHz and kappa/J = 0.05, 0.2 | 25, 100 | 25, 100 | arithmetic | OK |
 | VIII / Table IV | kappa/2pi = 4 g^2/Gamma_a (MHz) for g = 1.1, 2.2 MHz, Gamma_a = 10 MHz | 0.5, 2 | 0.484, 1.936 | arithmetic | OK |
 | VIII / Table IV | kappa/J for kappa/2pi = 0.5, 2 MHz and J/2pi = 10 MHz | 0.05, 0.2 | 0.05, 0.2 | arithmetic | OK |
-| text | 64 of 64 quoted strings found verbatim in main.tex | | | paper/prb/main.tex | OK |
+| text | 70 of 70 quoted strings found verbatim in main.tex | | | paper/prb/main.tex | OK |
 
-95 rows, 0 failed.
+97 rows, 0 failed.

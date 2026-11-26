@@ -42,8 +42,10 @@ r07 = min(DT["kappa"], key=lambda r: abs(r["kappa"] - 0.07))
 q0 = delta_heat(chain_heff(40, kappa=0.0), 1.0, 0.5)[0]
 chk("III B", "R at kappa=0.07J, L=40", 0.992, r07["R"], 0.0005, "deltaT_rectification.json kappa[]")
 chk("III B", "dQf(kappa=0.07)/dQf(kappa=0) in %", 45, 100 * r07["dQf"] / q0, 1.0, "json + chain_heff(kappa=0)")
-dev = max(abs(r["lnratio"] - 2 * (r["L"] - 1) * inv_xi(float(k))) for k, v in DT["L"].items() for r in v if r["lnratio"] < 30)
-chk("III B", "Fig. 1(b): max deviation from the law (ln ratio < 30)", 1e-8, dev, op="le", src="deltaT_rectification.json L{}")
+pts = [(2 * (r["L"] - 1) * inv_xi(float(k)), r["lnratio"]) for k, v in DT["L"].items() for r in v] + [(78 * inv_xi(r["kappa"]), r["lnratio"]) for r in DT["kappa"] if r["kappa"] <= 0.5]
+chk("III B", "Fig. 1(b): max |ln ratio - law| for predicted ln ratio <= 48", 2e-11, max(abs(y - x) for x, y in pts if x <= 48), op="le", src="deltaT_rectification.json")
+chk("III B", "Fig. 1(b): |ln ratio - law| at the point with predicted ln ratio 72", 2e-6, max(abs(y - x) for x, y in pts if 48 < x < 75), 0.5e-6, "deltaT_rectification.json")
+chk("III B", "Fig. 1(b): number of stored points beyond 75 (omitted from the figure) and its predicted ln ratio", [1, 96], [sum(x > 75 for x, y in pts), max(x for x, y in pts)], 0.5, "deltaT_rectification.json")
 chk("III B", "L range in Fig. 1(b)", [5, 160], [min(r["L"] for r in DT["L"]["0.1"]), max(r["L"] for r in DT["L"]["0.1"])], 0, "json")
 kk = [r["kappa"] for r in DT["kappa"] if r["kappa"] <= 0.5]
 chk("III B", "kappa range in Fig. 1(b)", [0.003, 0.5], [min(kk), max(kk)], 0.012, "json")
@@ -181,7 +183,7 @@ chk("VI D", "same with mirror-symmetric disorder", 1e-12, abs(sig(sym, 0.5) - si
 # ---------------- Sec. VII ----------------
 on = DS["onsite"]
 chk("VII A", "R for kappa = 0.05, 0.1, 0.2 (every W_d)", [0.9604, 0.9992, 1.0000], [np.mean([r["R_mean"] for r in on if r["kappa"] == k]) for k in (0.05, 0.1, 0.2)], 5e-5, "disorder.json onsite")
-chk("VII A", "sample independence of the ln ratio (max deviation from the law)", 1e-13, max(r["ln_max_dev"] for r in on), op="le", src="onsite ln_max_dev")
+chk("VII A", "sample independence of the ln ratio (max deviation from the law)", 1e-14, max(r["ln_max_dev"] for r in on), op="le", src="onsite ln_max_dev")
 m1 = {r["Wd"]: r["Qf_median"] for r in on if r["kappa"] == 0.1}
 chk("VII A", "median dQf (1e-2) at kappa=0.1 for W_d = 0, 0.5, 1, 2, 3, 4", [1.62, 1.26, 0.61, 0.051, 0.0014, 0.000016], [100 * m1[w] for w in (0, 0.5, 1.0, 2.0, 3.0, 4.0)], [0.006, 0.006, 0.006, 0.0006, 0.00006, 0.000001], "onsite Qf_median")
 chk("VII A", "largest W_d with median dQf >= 1e-3 for all three kappa", 1.5, max(w for w in sorted(set(r["Wd"] for r in on)) if all(r["Qf_median"] >= 1e-3 for r in on if r["Wd"] == w)), 0, "onsite Qf_median")
@@ -189,7 +191,7 @@ ld = {(r["kappa"], r["Wd"], r["L"]): r["lnQf_mean"] for r in DS["Ldep"]}
 chk("VII A / Table III", "forward decay rates (rows kappa = 0, 0.05, 0.2; columns W_d = 0.5, 1, 2)", [0.006, 0.020, 0.055, 0.017, 0.034, 0.090, 0.027, 0.044, 0.107],
     [(ld[(k, w, 10)] - ld[(k, w, 80)]) / 70 for k in (0.0, 0.05, 0.2) for w in (0.5, 1.0, 2.0)], 6e-4, "disorder.json Ldep")
 bd = {(r["kind"], r["L"]): r for r in DS["bond"]}
-chk("VII B", "sum rule: max deviation over samples", 1e-13, max(r["max_dev_from_sum_rule"] for r in DS["bond"]), op="le", src="disorder.json bond")
+chk("VII B", "sum rule: max deviation over samples", 3e-14, max(r["max_dev_from_sum_rule"] for r in DS["bond"]), op="le", src="disorder.json bond")
 chk("VII B", "kappa spread: means (L=20,40,80)", [3.75, 7.85, 15.83], [bd[("kappa", L)]["ln_mean"] for L in (20, 40, 80)], 0.006, "bond")
 chk("VII B", "clean values", [3.80, 7.81, 15.81], [bd[("kappa", L)]["clean"] for L in (20, 40, 80)], 0.006, "bond")
 chk("VII B", "kappa spread: standard deviations", [0.43, 0.55, 0.88], [bd[("kappa", L)]["ln_std"] for L in (20, 40, 80)], 0.006, "bond")
@@ -209,7 +211,8 @@ chk("VIII / Table IV", "kappa/2pi = 4 g^2/Gamma_a (MHz) for g = 1.1, 2.2 MHz, Ga
 chk("VIII / Table IV", "kappa/J for kappa/2pi = 0.5, 2 MHz and J/2pi = 10 MHz", [0.05, 0.2], [0.5 / 10, 2 / 10], 0, "arithmetic")
 
 # ---------------- the quoted values above must be the ones printed in the manuscript ----------------
-TEX = open(os.path.join(ROOT, "paper", "prb", "main.tex")).read()
+TEXFILE = os.path.join(ROOT, "paper", "prb", "main.tex")  # not distributed with the public repository
+TEX = open(TEXFILE).read() if os.path.exists(TEXFILE) else None
 SNIPPETS = [r"(L-1)/\xi>2.65", r"$\R=0.992$", r"$45\%$ of its lossless value", r"agree within $6\%$", r"$28$--$38\%$", r"$15.65\to8.11$", r"stays above $0.97$",
             r"1.347 & 1.412 & 1.462 & 1.5033", r"$+16.8\%$ & $+7.7\%$ & $+2.6\%$ & $+0.03\%$", r"$\ln(\dQ_f/\dQ_r)=1.5003$", r"4.918\times10^{-3}J^2$",
             r"$+0.045$ ($L=12$) and $-0.038$ ($L=16$)", r"at most $0.011$", r"$0.03$ at $\kappa=0.1J$, and $0.08$", r"$7\times10^{-4}J^2$", r"$6\times10^{-4}J^2$",
@@ -226,11 +229,12 @@ SNIPPETS = [r"(L-1)/\xi>2.65", r"$\R=0.992$", r"$45\%$ of its lossless value", r
             r"($3.75$, $7.85$ and $15.83$ against the clean $3.80$, $7.81$ and $15.81$", r"$0.43$, $0.55$ and $0.88$", r"($6.56$ against $7.81\times0.84=6.57$", r"$0.13$--$0.25$",
             r"$-0.07$, $-0.04$ and $0.16$", r"$0.91$, $1.34$ and $1.77$", r"10.12\pm0.11$, $9.71\pm0.19$ and $9.42\pm0.30$", r"clean value $10.31$",
             r"15--54 & 15--54", r"$g=2\pi\times1.1$--$2.2$~MHz", r"$\kappa=2\pi\times25$--$100$~Hz", r"about $4\%$ of the slope"]
-missing = [x for x in SNIPPETS if x not in TEX]
+SNIPPETS += [r"better than $2\times10^{-11}$", r"$2\times10^{-6}$ at $e^{72}$", r"predicted logarithm $96$", r"$3\times10^{-14}$ on $10^2$", r"sample independent to $10^{-14}$", r"$K=80$ and $160$ for checks"]
+missing = [x for x in SNIPPETS if x not in TEX] if TEX is not None else []
 for x in missing:
     rows.append(f"| text | quoted value not found verbatim in main.tex: `{x}` | | | paper/prb/main.tex | **FAIL** |")
 fails += len(missing)
-rows.append(f"| text | {len(SNIPPETS) - len(missing)} of {len(SNIPPETS)} quoted strings found verbatim in main.tex | | | paper/prb/main.tex | {'OK' if not missing else '**FAIL**'} |")
+rows.append(f"| text | {len(SNIPPETS) - len(missing)} of {len(SNIPPETS)} quoted strings found verbatim in main.tex | | | paper/prb/main.tex | {'OK' if not missing else '**FAIL**'} |" if TEX is not None else "| text | manuscript source not present: verbatim check skipped | | | paper/prb/main.tex | — |")
 
 print("| Section | Quantity | Quoted in the manuscript | Recomputed | Source | Result |\n|---|---|---|---|---|---|")
 print("\n".join(rows))

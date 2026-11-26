@@ -60,12 +60,12 @@ def fig1():
     # (b) collapse
     b = ax[1]
     for k, mk in zip(["0.05", "0.1", "0.3"], ["o", "s", "^"]):
-        rows = d["L"][k]
-        b.plot([law(float(k), r["L"]) for r in rows], [r["lnratio"] for r in rows], mk, mfc="none", label=rf"$\kappa={k}J$, $L=5$–$160$")
+        rows = [r for r in d["L"][k] if law(float(k), r["L"]) < 75]  # beyond e^75 the reverse response is below double precision
+        b.plot([law(float(k), r["L"]) for r in rows], [r["lnratio"] for r in rows], mk, mfc="none", label=rf"$\kappa={k}J$, $L=5$–${rows[-1]['L']}$")
     rows = [r for r in d["kappa"] if r["kappa"] <= 0.5]
     b.plot([law(r["kappa"], 40) for r in rows], [r["lnratio"] for r in rows], "x", color="C3", label=r"$L=40$, $\kappa=0.003$–$0.5J$")
-    b.plot([0, 100], [0, 100], "k-", lw=0.6, zorder=0)
-    b.set_xlabel(r"$2(L-1)/\xi$"); b.set_ylabel(r"$\ln(\delta Q_f/\delta Q_r)$"); b.set_xlim(0, 100); b.set_ylim(0, 100)
+    b.plot([0, 75], [0, 75], "k-", lw=0.6, zorder=0)
+    b.set_xlabel(r"$2(L-1)/\xi$"); b.set_ylabel(r"$\ln(\delta Q_f/\delta Q_r)$"); b.set_xlim(0, 75); b.set_ylim(0, 75)
     b.legend(loc="upper left", handlelength=1); label(b, "(b)")
     # (c) rectification vs throughput
     c = ax[2]

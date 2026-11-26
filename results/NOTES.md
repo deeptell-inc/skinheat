@@ -351,3 +351,4 @@ G_LL = (P G P)_11 = (G^T)_11 = G_11 → 端の反射率が厳密に等しい。�
 - `make prb` を追加。Zenodo tarball から `*.tex` と `paper/prb` を除外（.tex 非公開の方針に合わせた）。**Zenodo 下書き 23801927 の tarball は 10-30 版のまま（旧図・.tex 入り）**: 公開前に差し替えが必要。
 - 2026-11-11: PRB 版に manuscript-deai パス。定型マーカーは 0 件だったので構造側のみ修正（33 箇所: 「主張: 補足」型コロン文の分割 28→9、修辞疑問・格言調の締めの平叙化、節題のコロン除去）。数値の多重集合・\cite・\ref は改稿前後で一致、エラー 0。改稿前は `paper/prb/main_2026-11-11_predeai.tex.bak`。
   **内容の訂正 1 件**: 結論の「interactions, next-nearest-neighbour hopping and Anderson localisation all lower the throughput and never the slope」は NNN について誤り（t₂ は熱平均指数を 15.65→8.11 に変える）。「相互作用と Anderson 局在は前因子に効き傾きは不変、NNN は定数指数をエネルギー分解の非 Bloch 形に置き換える」に修正。PRL 版（投稿済み・却下）には同じ文が残っている。
+- 2026-11-26: APS 再投稿フォーム用の「査読コメントへの回答＋変更リスト」を `paper/prb/RESUBMISSION-CHANGES.md` に作成（LX20531 は査読に回っていないので査読コメントなし、と明記。変更 14 項目、うち項目 8 は結論の NNN の訂正、項目 13 の図は PRL 投稿時の図の版が不明なため要確認）。PRB 版ソースは 11-11 から本文変更なしを PDF 差分で確認。

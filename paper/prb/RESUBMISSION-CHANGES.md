@@ -37,3 +37,5 @@ LIST OF CHANGES (relative to LX20531)
 13. Figures. [DELETE THIS ITEM IF THE FIGURES ARE THE SAME FILES AS IN LX20531.] The axis ranges of Fig. 1(b) and Fig. 4(c) were extended so that all data points are visible, and the legend of Fig. 3(a) was moved off the data. The data are unchanged.
 
 14. Cover letter. The list of suggested referees was revised for the readership of Physical Review B.
+
+15. An "AI use disclosure" section was added before the Data availability statement, in accordance with the APS policy on AI tools.

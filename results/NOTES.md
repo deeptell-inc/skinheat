@@ -355,3 +355,4 @@ G_LL = (P G P)_11 = (G^T)_11 = G_11 → 端の反射率が厳密に等しい。�
 - 2026-11-26: APS の AI 利用開示欄用の文案を `paper/prb/AI-USE-DISCLOSURE.md` に作成（APS 方針: 実質的利用は申告必須、論文に "AI Use Disclosure" として掲載、未申告は不正行為扱い）。ツール: Claude Code（Fable 5.1 / 5.2）。コード・シミュレーション・解析・導出・図・文献・執筆のすべてを申告。**著者自身の検証内容は角括弧で未確定**（著者が事実に合わせて編集してから貼ること）。`submission-bundle/DECLARATIONS.md` の Author contributions（実装・全計算・執筆を著者 1 名に帰属）はこの開示と矛盾するので要修正。
 - 同日: `RESUBMISSION-CHANGES.md` の PRL 判断の記述を、実際の文面（impact, innovation, interest の基準）に合わせて訂正。
 - 2026-11-26: 著者確認: 第 1 段階（Gauss ソルバー、厳密則の定式化）も Fable 5.1 による。AI-USE-DISCLOSURE.md の (1)(3) を確定。残る角括弧は著者の検証内容 2 文のみ。
+- 2026-11-26: 著者確認（原稿全文の通読、本文数値と結果ファイルの照合、文献確認）を受けて AI 利用開示を確定。再導出の文は未確認のため削除。`paper/prb/main.tex` に「AI use disclosure」節を追加（Data availability の前）、変更リストに項目 15 を追加。

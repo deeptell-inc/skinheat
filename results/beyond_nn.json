@@ -12087,13 +12087,13 @@
   }
  },
  "gain_bath_V": {
-  "note": "local T=inf bath: loss kappa/2 + same-chirality gain kappa/2 (gain_ratio=1, kappa_tot=0.1), L=12, chi=256, dt=0.05",
+  "note": "local T=inf bath: loss kappa/2 + same-chirality gain kappa/2 (gain_ratio=1, kappa_tot=0.1), L=12, chi=256, dt=0.05; err_V2 = time fluctuation of ln ratio over the last five windows (0.082)",
   "gauss": 2.2018,
   "gain_bath": {
    "0.0": 2.203,
    "2.0": 1.662,
    "offset_V2": -0.541,
-   "err_V2": 0.05
+   "err_V2": 0.08
   },
   "pure_loss_k0p1": {
    "0.0": 2.247,
@@ -12101,6 +12101,6 @@
    "cv_2.0": 1.659,
    "offset_V2": -0.543
   },
-  "conclusion": "bath occupation does not change the V>0 offset (difference 0.002 << 0.05)"
+  "conclusion": "V>0 offset with the bath (-0.541 +- 0.08) is consistent with the pure-loss offset (-0.543)"
  }
 }

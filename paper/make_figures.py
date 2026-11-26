@@ -120,7 +120,7 @@ def fig2():
 
 def fig3():
     B = load("beyond_nn.json"); cf = B["chi256_final"]; ck = B["chi256_kappa0.1"]; gb = B["gain_bath_V"]
-    e05, e1, eg = cf["err_estimate"], 0.04, gb["gain_bath"]["err_V2"]
+    e05, e1, eg = cf["err_estimate"], 0.06, gb["gain_bath"]["err_V2"]  # bias and time fluctuation; see scripts/check_manuscript_numbers.py
     fig, ax = plt.subplots(1, 4, figsize=(W2, 2.15), gridspec_kw=dict(wspace=0.6))
     a = ax[0]; Ls = np.array([10, 22])
     for kap, col in [(0.05, "C0"), (0.1, "C3")]:
@@ -145,9 +145,9 @@ def fig3():
     for kap, mk, col in [("0.03", "^", "C1"), ("0.05", "o", "C0")]:
         rows = B["slopes"][kap]; g = rows[0]["gauss_slope"]
         c.errorbar([r["V"] for r in rows], [r["slope"] / g for r in rows], yerr=[r["slope_err"] / g for r in rows], fmt=mk, mfc="none", color=col, label=rf"$\kappa={kap}J$, $\chi=128$")
-    c.errorbar([2.07], [cf["slope_V2"] / cf["slope_gauss"]], yerr=0.1, fmt="o", color="C0", label=r"$\kappa=0.05J$, $\chi=256$")
+    c.errorbar([2.07], [cf["slope_V2"] / cf["slope_gauss"]], yerr=0.04, fmt="o", color="C0", label=r"$\kappa=0.05J$, $\chi=256$")
     s01 = (ck["16"]["cv"] - ck["12"]["cv"]) / 4; g01 = (ck["16"]["gauss"] - ck["12"]["gauss"]) / 4
-    c.errorbar([2.14], [s01 / g01], yerr=0.1, fmt="s", color="C3", label=r"$\kappa=0.1J$, $\chi=256$")
+    c.errorbar([2.14], [s01 / g01], yerr=0.04, fmt="s", color="C3", label=r"$\kappa=0.1J$, $\chi=256$")
     c.axhline(1, color="k", lw=0.6); c.set_ylim(0.4, 1.7); c.set_xlim(-0.2, 2.4)
     c.set_xlabel(r"$V/J$"); c.set_ylabel(r"$\xi/\xi_{\rm eff}(V)$"); c.legend(loc="upper left", fontsize=5.3, labelspacing=0.25); label(c, "(c)")
     d = ax[3]

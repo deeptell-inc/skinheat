@@ -356,3 +356,9 @@ G_LL = (P G P)_11 = (G^T)_11 = G_11 → 端の反射率が厳密に等しい。�
 - 同日: `RESUBMISSION-CHANGES.md` の PRL 判断の記述を、実際の文面（impact, innovation, interest の基準）に合わせて訂正。
 - 2026-11-26: 著者確認: 第 1 段階（Gauss ソルバー、厳密則の定式化）も Fable 5.1 による。AI-USE-DISCLOSURE.md の (1)(3) を確定。残る角括弧は著者の検証内容 2 文のみ。
 - 2026-11-26: 著者確認（原稿全文の通読、本文数値と結果ファイルの照合、文献確認）を受けて AI 利用開示を確定。再導出の文は未確認のため削除。`paper/prb/main.tex` に「AI use disclosure」節を追加（Data availability の前）、変更リストに項目 15 を追加。
+
+## 本文数値の機械照合（2026-11-26）
+- `scripts/check_manuscript_numbers.py`（`make check`）: PRB 版の本文・表・キャプションの数値 94 項目を results/*.json とパッケージから再計算して照合、加えて本文値 64 個が main.tex に実在するかを確認。出力 `paper/prb/number-check.md`。現在 FAIL 0。
+- **照合で 14 箇所の誤りを発見し訂正**（一覧は `paper/prb/VERIFICATION-CHECKLIST.md`）。主なもの: 49 %→45 %、リード比較 5–15 %→K=80 で 6 %/K=10 で −28〜−38 %、κ=0.2 の R 下限 0.85–0.98→0.68–0.94、絶対電流の床の記述、浴の Δ_V に不確かさ ±0.08、「3 桁」→約 500 倍、浴非依存 1e-9→応答が 2e-13、鏡映の乱れ 3e-3→3e-4、W_d=4 の中央値の桁、W_d≲2J→1.5J、回路パラメータの整合。PRL 版（LX20531）と SM にも同じ誤りがあった。
+- `beyond_nn.json["gain_bath_V"]["gain_bath"]["err_V2"]` を 0.05→0.08（最終 5 チャンクの時間ゆらぎの実測 0.082）。図 3 の誤差棒を更新（κ=0.1: 0.06、浴: 0.08、傾き: 4 %）。
+- 改稿前: `paper/prb/main_2026-11-26_prenumfix.tex.bak`。再投稿欄の変更リストに項目 16 を追加。
